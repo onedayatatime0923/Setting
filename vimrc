@@ -240,3 +240,7 @@ nnoremap t <C-t>
 """"""""""""""""""""""""""""""""""""""""""
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_width=30
+""""""""""""""""""""""""""""""""""""""""""
+"set for tagbar                          "
+""""""""""""""""""""""""""""""""""""""""""
+nnoremap <F3> :NumbersToggle<CR>

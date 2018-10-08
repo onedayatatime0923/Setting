@@ -9,6 +9,8 @@ git clone https://github.com/tomasr/molokai.git
 git clone https://github.com/scrooloose/nerdcommenter.git
 # install nerdtree
 git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
+# install numbers
+git clone https://github.com/myusuf3/numbers.vim.git ~/.vim/bundle/numbers
 # install syntastic
 git clone --depth=1 https://github.com/vim-syntastic/syntastic.git
 # install tagbar
