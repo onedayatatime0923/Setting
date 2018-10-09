@@ -109,7 +109,7 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
-nnoremap <C-m> <C-w>W
+" nnoremap <C-m> <C-w>W
 " maximize horizontal direction window
 nnoremap [ <C-w>_
 " maximize vertical direction window
@@ -142,8 +142,8 @@ nnoremap <space> za
 """"""""""""""""""""""""""""""""""""""""""
 "set for vimdiff                         "
 """"""""""""""""""""""""""""""""""""""""""
-nnoremap <C-n> *]c*
-nnoremap <C-p> *[c*
+nnoremap <C-g> ]c
+nnoremap <C-m> [c
 """"""""""""""""""""""""""""""""""""""""""
 "set for YCM                             "
 """"""""""""""""""""""""""""""""""""""""""
