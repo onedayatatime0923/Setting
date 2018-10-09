@@ -23,6 +23,10 @@ git clone https://github.com/vim-airline/vim-airline-themes ~/.vim/bundle/vim-ai
 git clone https://github.com/ryanoasis/vim-devicons.git
 # install vim-easymotion
 git clone https://github.com/easymotion/vim-easymotion.git
+# install vim-fugitive
+cd ~/.vim/bundle
+git clone https://github.com/tpope/vim-fugitive.git
+vim -u NONE -c "helptags vim-fugitive/doc" -c q
 # install vim-gutentags
 git clone https://github.com/ludovicchabant/vim-gutentags.git
 # install vim-nerdtree-syntax-hightlight
