@@ -38,6 +38,7 @@ hi Search cterm=reverse ctermbg=none ctermfg=none
 "set form                                "
 """"""""""""""""""""""""""""""""""""""""""
 set number
+set relativenumber
 set ruler
 """"""""""""""""""""""""""""""""""""""""""
 "for search                              "
@@ -77,20 +78,20 @@ map <C-c> : silent call SwitchFullSimpleMode()<CR>
 map! <C-c> <Esc>:call SwitchFullSimpleMode()<CR>
 function SwitchFullSimpleMode()
 	if (&mouse == "a")
+    NERDTreeTabsClose
 		let &mouse = ""
 		set nocindent
-		set nonumber
+		set nonumber norelativenumber
 		set wrap
     set paste
-    NERDTreeTabsClose
 		echo "Switch to simple mode.(nomouse, nonumber, nocindent, wrap, paste, NERDTreeTabsClose)"
 	else
+    "NERDTreeTabsOpen
 		let &mouse = "a"
 		set cindent
-		set number
+		set number relativenumber
 		set wrap
     set nopaste
-    "NERDTreeTabsOpen
 		echo "Switch to full mode.(mouse, number, cindent, wrap, nopaste)"
 	endif
 endfunction
@@ -246,6 +247,6 @@ nnoremap t <C-t>
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_width=30
 """"""""""""""""""""""""""""""""""""""""""
-"set for tagbar                          "
+"set for NumbersToggle                   "
 """"""""""""""""""""""""""""""""""""""""""
 nnoremap <F3> :NumbersToggle<CR>
