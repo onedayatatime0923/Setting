@@ -139,6 +139,11 @@ set foldnestmax=2
 set foldcolumn=0
 nnoremap <space> za
 """"""""""""""""""""""""""""""""""""""""""
+"set for vimdiff                         "
+""""""""""""""""""""""""""""""""""""""""""
+nnoremap <C-n> *]c*
+nnoremap <C-p> *[c*
+""""""""""""""""""""""""""""""""""""""""""
 "set for YCM                             "
 """"""""""""""""""""""""""""""""""""""""""
 set completeopt-=preview
