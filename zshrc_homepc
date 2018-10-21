@@ -74,7 +74,6 @@ plugins=(
 ####################################################################
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/
-export DISPLAY=:1
 
 source $ZSH/oh-my-zsh.sh
 
@@ -130,10 +129,10 @@ alias sftpchen='sftp b04901025@140.112.18.215'
 alias sshpc='ssh kevin@220.132.13.37 -p 6666'
 alias sftppc='sftp -P 6666 kevin@220.132.13.37'
 function sshlab {
-  ssh b04901136@eda.ee.ntu.edu.tw -p ${1:-50033} -X
+  ssh b04901136@eda.ee.ntu.edu.tw -p ${1:-50030} -X
 }
 function sftplab {
-  sftp -P ${1:-50033} b04901136@eda.ee.ntu.edu.tw
+  sftp -P ${1:-50030} b04901136@eda.ee.ntu.edu.tw
 }
 alias tb='tensorboard --logdir '
 function tas {
