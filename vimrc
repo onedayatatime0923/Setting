@@ -149,6 +149,8 @@ nnoremap <C-m> [c
 """"""""""""""""""""""""""""""""""""""""""
 set completeopt-=preview
 let g:ycm_show_diagnostics_ui = 0
+let g:ycm_enable_diagnostic_signs = 0
+let g:ycm_enable_diagnostic_highlighting = 0
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/youcompleteme/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 """"""""""""""""""""""""""""""""""""""""""
 "set for nerdtree                        "
@@ -196,6 +198,7 @@ nmap z <Plug>(easymotion-overwin-w)
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+let g:syntastic_cpp_checkers=[]
 let g:syntastic_python_checkers=['pyflakes']
 let g:syntastic_python_pyflakes_exec ='pyflakes'
 let g:syntastic_always_populate_loc_list = 1
