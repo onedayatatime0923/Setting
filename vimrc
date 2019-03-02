@@ -196,6 +196,7 @@ nmap z <Plug>(easymotion-overwin-w)
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+let g:syntastic_cpp_checkers=[]
 let g:syntastic_python_checkers=['pyflakes']
 let g:syntastic_python_pyflakes_exec ='pyflakes'
 let g:syntastic_always_populate_loc_list = 1
