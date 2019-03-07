@@ -241,6 +241,10 @@ let g:NERDCommentEmptyLines = 1
 let g:NERDToggleCheckAllLines = 1
 nmap m <leader>c<space>
 """"""""""""""""""""""""""""""""""""""""""
+"set for fugitive                        "
+""""""""""""""""""""""""""""""""""""""""""
+set diffopt+=vertical
+""""""""""""""""""""""""""""""""""""""""""
 "set for ctags                           "
 """"""""""""""""""""""""""""""""""""""""""
 nnoremap f <C-]>
