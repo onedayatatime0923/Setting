@@ -129,8 +129,8 @@ set splitright
 """"""""""""""""""""""""""""""""""""""""""
 nnoremap <C-n> gt
 nnoremap <C-p> gT
-noremap <C-y> :-tabmove<cr>
-noremap <C-o> :+tabmove<cr>
+noremap <F6> :-tabmove<cr>
+noremap <F7> :+tabmove<cr>
 
 """"""""""""""""""""""""""""""""""""""""""
 "set for foldmethod                      "
