@@ -6,6 +6,8 @@ mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 cd ~/.vim/bundle
+# install conflict-marker
+git clone git@github.com:rhysd/conflict-marker.vim.git
 # install molokai
 git clone https://github.com/tomasr/molokai.git
 # install nerdcommenter
