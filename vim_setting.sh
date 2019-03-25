@@ -24,6 +24,8 @@ git clone https://github.com/majutsushi/tagbar.git
 git clone https://github.com/vim-airline/vim-airline.git
 # install vim-airline-themes
 git clone https://github.com/vim-airline/vim-airline-themes ~/.vim/bundle/vim-airline-themes
+# install vim-cpp-enhanced-highlight
+git clone https://github.com/octol/vim-cpp-enhanced-highlight.git
 # install vim-devicons
 git clone https://github.com/ryanoasis/vim-devicons.git
 # install vim-easymotion
