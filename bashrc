@@ -2,7 +2,6 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -117,117 +116,33 @@ if ! shopt -oq posix; then
   fi
 fi
 ####################################################################
-#  export path                                                     #
+#  custom setting                                                  #
 ####################################################################
-export PATH="$PATH:/home/your_user/.local/bin"
-####################################################################
-#  alias                                                           #
-####################################################################
+
 function cd {
   builtin cd "$@" && ls -lXhF --color=always
 }
 alias ls='ls -lXhF --color=always'
 alias rm='rm -i'
-alias ml='cd ~/Documents/Academic/ML/'
-alias mlds='cd ~/Documents/Academic/MLDS/'
-alias ca='cd ~/Documents/Academic/computer_architecture/'
-alias ic='cd ~/Documents/Academic/Intergrated_Circuit/'
-alias gh='cd ~/Documents/github/'
+alias gh='cd ~/Github'
 alias ptt='ssh bbsu@ptt.cc'
 alias gputem='nvidia-settings -q gpucoretemp'
-alias sshtony='ssh ml01@1.34.48.155 -X'
-alias sftptony='sftp ml01@1.34.48.155'
-alias sshchen='ssh b04901025@140.112.18.215 -X'
-alias sftpchen='sftp b04901025@140.112.18.215'
-alias sshic='ssh b04136@140.112.20.59  -X'
-alias sftpic='sftp b04136@140.112.20.59'
-alias sshpc='ssh kevin@220.132.13.37 -p 1234'
-alias sftppc='sftp -P 1234 kevin@220.132.13.37'
-alias sshdclab='ssh team07@140.112.33.165 -p 12345 -X'
-alias sftpdclab='sftp -P 12345 team07@140.112.33.165'
-alias gad='git add'
-alias gcm='git commit'
-alias gpl='git pull'
-alias gps='git push'
-#alias tmuxa='tmux attach -t'
-alias tmuxn='tmux new -s'
-alias tmuxk='tmux kill-session -t'
-function tas {
-  tmux attach -t "$@" || tmux new -s "$@"
+alias sshpc='ssh kevin@220.132.13.37 -p 6666'
+alias sftppc='sftp -P 6666 kevin@220.132.13.37'
+function sshlab {
+  ssh b04901136@eda.ee.ntu.edu.tw -p ${1:-50032} -X
 }
-
-####################################################################
-#  add cuda tools to command path                                  #
-####################################################################
-#export PATH=/usr/local/cuda/bin:${PATH}
-export PATH=/usr/local/cuda-9.0/bin${PATH:+:${PATH}}
-#export MANPATH=/usr/local/cuda/man:${MANPATH}
-# add cuda libraries to library path
-#if [[ "${LD_LIBRARY_PATH}" != "" ]]
-#then
-  #export LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH}
-#else
-  #export LD_LIBRARY_PATH=/usr/local/cuda/lib64
-#fi
-export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib64
-export CUDA_HOME=/usr/local/cuda
-####################################################################
-# powerline                                                        #
-####################################################################
-#function _update_ps1() {
-#  PS1="$(powerline-shell $?)"
-#}
-#if [ "$TERM" != "linux" ]; then
-#  PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-#fi
-####################################################################
-# colorful PS1                                                     #
-####################################################################
-BLACKPS1=" \[\033[38;5;37m\]\A \[\033[38;0;32m\]\h\[\033[38;5;15m\]@\[\033[38;5;33m\]\u\[\033[38;5;72m\]:\[\033[38;5;9m\]\w\[\033[38;5;15m\]\\$ \[$(tput sgr0)\]"
-export PS1=$BLACKPS1
+function sftplab {
+  sftp -P ${1:-50032} b04901136@eda.ee.ntu.edu.tw
+}
+function sshedaunion {
+  ssh pd1812@edaunion.ee.ntu.edu.tw -p ${1:-40055} -X
+}
+function sftpedaunion {
+  sftp -P ${1:-40055} pd1812@edaunion.ee.ntu.edu.tw
+}
+alias tb='tensorboard --logdir '
 ####################################################################
 # colorful ascii plot                                              #
 ####################################################################
 screenfetch -A 'Mac OS X' -t | /usr/games/lolcat -p 1
-#screenfetch -A 'Mac OS X' -t -c ,11  
-####################################################################
-# colorful background                                              #
-####################################################################
-echo -ne "\033]10;#FFFFFF\007" # change text color
-echo -ne "\033]11;#000000\007" # change background color
-####################################################################
-#  Change color according to the number of Bash shells opened      #
-####################################################################
-#Finds out the number of opened bashs counting the lines containing "bash"
-#in the pstree function. (-c deactivates compact display to avoid it showing
-#lines with "2*[bash]" instead of one for each bash)
-
-#Number_of_color_scheme=2
-#Number_of_bashs=$(($(($(pstree -c | grep "bash" | wc -l)-1))%${Number_of_color_scheme}))
-#BLACKPS1=" \[\033[38;5;37m\]\A \[\033[38;0;32m\]\h\[\033[38;5;15m\]@\[\033[38;5;33m\]\u\[\033[38;5;72m\]:\[\033[38;5;9m\]\w\[\033[38;5;15m\]\\$ \[$(tput sgr0)\]"
-#WHITEPS1=" \[\033[38;;0m\]\A \[\033[38;;0m\]\h\[\033[38;;0m\]@\[\033[38;;0m\]\u\[\033[38;;0m\]:\[\033[38;;0m\]\w\[\033[38;;0m\]\\$ \[$(tput sgr0)\]"
-#function blackbg {
-#  echo -ne "\033]10;#FFFFFF\007" # change text color
-#  echo -ne "\033]11;#000000\007" # change background color
-#  screenfetch -A 'Mac OS X' -t | /usr/games/lolcat -p 1
-#  export PS1=$BLACKPS1
-#}
-#function whitebg {
-#  echo -ne "\033]10;#000000\007" # change text color
-#  echo -ne "\033]11;#ffffff\007" # change background color
-#  screenfetch -A 'Mac OS X' -t -c 0,0  
-#  export PS1=$WHITEPS1
-#}
-
-####################################################################
-#  Checks if the terminal being opened was opened by the user or by#
-#  the script, and act according to it                             #
-####################################################################
-#if [ $TERM = screen-256color ]; then
-#  blackbg
-#elif [ $Number_of_bashs = 0 ]; then
-#  blackbg
-#else
-#  whitebg
-#fi
