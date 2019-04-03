@@ -143,7 +143,7 @@ nnoremap <space> za
 "set for vimdiff                         "
 """"""""""""""""""""""""""""""""""""""""""
 nnoremap <C-g> ]c
-nnoremap <C-m> [c
+nnoremap <C-o> [c
 """"""""""""""""""""""""""""""""""""""""""
 "set for YCM                             "
 """"""""""""""""""""""""""""""""""""""""""
@@ -201,7 +201,7 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_cpp_checkers=[]
 let g:syntastic_python_checkers=['pyflakes']
-let g:syntastic_python_pyflakes_exec ='pyflakes'
+let g:syntastic_python_pyflakes_exec ='pyflakes3'
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_loc_list_height=2
