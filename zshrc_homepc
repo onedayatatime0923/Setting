@@ -136,6 +136,9 @@ function sshedaunion {
 function sftpedaunion {
   sftp -P ${1:-40055} pd1812@edaunion.ee.ntu.edu.tw
 }
+alias sshRLab='ssh b04901136@140.112.175.122'
+alias sftpRLab='sftp b04901136@140.112.175.122'
+
 alias tb='tensorboard --logdir '
 ####################################################################
 # colorful ascii plot                                              #
