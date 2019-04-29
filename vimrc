@@ -125,8 +125,8 @@ nnoremap = <C-w>=
 nmap + <C-W>+
 nmap - <C-W>-
 " increase/ decrease vertical direction window
-nmap <C-u> <C-w><
-nmap <C-i> <C-w>>
+nnoremap ( <C-w><
+nnoremap ) <C-w>>
 set splitbelow
 set splitright
 """"""""""""""""""""""""""""""""""""""""""
@@ -191,8 +191,8 @@ let g:NERDTreePatternMatchHighlightFullName = 1
 """"""""""""""""""""""""""""""""""""""""""
 "set for easymotion                      "
 """"""""""""""""""""""""""""""""""""""""""
-map  <C-n> <Plug>(easymotion-bd-w)
-nmap <C-n> <Plug>(easymotion-overwin-w)
+map  <C-u> <Plug>(easymotion-bd-w)
+nmap <C-u> <Plug>(easymotion-overwin-w)
 " map  f <Plug>(easymotion-bd-f)
 " nmap f <Plug>(easymotion-overwin-f)
 " nmap s <Plug>(easymotion-overwin-f2)
