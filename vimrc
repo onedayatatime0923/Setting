@@ -189,8 +189,8 @@ let g:NERDTreePatternMatchHighlightFullName = 1
 """"""""""""""""""""""""""""""""""""""""""
 "set for easymotion                      "
 """"""""""""""""""""""""""""""""""""""""""
-map  z <Plug>(easymotion-bd-w)
-nmap z <Plug>(easymotion-overwin-w)
+map  <C-n> <Plug>(easymotion-bd-w)
+nmap <C-n> <Plug>(easymotion-overwin-w)
 " map  f <Plug>(easymotion-bd-f)
 " nmap f <Plug>(easymotion-overwin-f)
 " nmap s <Plug>(easymotion-overwin-f2)
