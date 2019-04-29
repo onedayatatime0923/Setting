@@ -72,6 +72,10 @@ set showmode
 set wrap
 set mouse=a
 """"""""""""""""""""""""""""""""""""""""""
+"search in visual mode                   "
+""""""""""""""""""""""""""""""""""""""""""
+vnoremap // y/\V<C-r>=escape(@",'/\')<CR><CR>
+""""""""""""""""""""""""""""""""""""""""""
 "Control c                               "
 """"""""""""""""""""""""""""""""""""""""""
 map <C-c> : silent call SwitchFullSimpleMode()<CR>
@@ -109,7 +113,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
-" nnoremap <C-m> <C-w>W
 " maximize horizontal direction window
 nnoremap [ <C-w>_
 " maximize vertical direction window
@@ -239,7 +242,7 @@ let g:NERDCommentEmptyLines = 1
  let g:NERDTrimTrailingWhitespace = 1
 " Enable NERDCommenterToggle to check all selected lines is commented or not 
 let g:NERDToggleCheckAllLines = 1
-nmap m <leader>c<space>
+nmap <C-m> <leader>ci
 """"""""""""""""""""""""""""""""""""""""""
 "set for fugitive                        "
 """"""""""""""""""""""""""""""""""""""""""
@@ -247,8 +250,8 @@ set diffopt+=vertical
 """"""""""""""""""""""""""""""""""""""""""
 "set for ctags                           "
 """"""""""""""""""""""""""""""""""""""""""
-nnoremap f <C-]>
-nnoremap t <C-t>
+nnoremap <leader>f <C-]>
+nnoremap <leader>t <C-t>
 """"""""""""""""""""""""""""""""""""""""""
 "set for tagbar                          "
 """"""""""""""""""""""""""""""""""""""""""
