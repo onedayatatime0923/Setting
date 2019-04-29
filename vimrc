@@ -122,8 +122,8 @@ nnoremap ] <C-w>\|
 " equalize both horizontal vertical direction window
 nnoremap = <C-w>=
 " increase/ decrease horizontal direction window
-nmap + <C-W>+
-nmap - <C-W>-
+nnoremap + <C-W>+
+nnoremap - <C-W>-
 " increase/ decrease vertical direction window
 nnoremap ( <C-w><
 nnoremap ) <C-w>>
