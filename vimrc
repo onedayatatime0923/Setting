@@ -72,6 +72,10 @@ set showmode
 set wrap
 set mouse=a
 """"""""""""""""""""""""""""""""""""""""""
+"search in visual mode                   "
+""""""""""""""""""""""""""""""""""""""""""
+vnoremap // y/\V<C-r>=escape(@",'/\')<CR><CR>
+""""""""""""""""""""""""""""""""""""""""""
 "Control c                               "
 """"""""""""""""""""""""""""""""""""""""""
 map <C-c> : silent call SwitchFullSimpleMode()<CR>
@@ -102,6 +106,8 @@ nnoremap k gk
 nnoremap j gj
 nnoremap gk k
 nnoremap gj j
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
 """"""""""""""""""""""""""""""""""""""""""
 "widows navigation                       "
 """"""""""""""""""""""""""""""""""""""""""
@@ -109,7 +115,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
-" nnoremap <C-m> <C-w>W
 " maximize horizontal direction window
 nnoremap [ <C-w>_
 " maximize vertical direction window
@@ -117,11 +122,11 @@ nnoremap ] <C-w>\|
 " equalize both horizontal vertical direction window
 nnoremap = <C-w>=
 " increase/ decrease horizontal direction window
-nmap + <C-W>+
-nmap - <C-W>-
+nnoremap + <C-W>+
+nnoremap - <C-W>-
 " increase/ decrease vertical direction window
-nmap <C-u> <C-w><
-nmap <C-i> <C-w>>
+nnoremap ( <C-w><
+nnoremap ) <C-w>>
 set splitbelow
 set splitright
 """"""""""""""""""""""""""""""""""""""""""
@@ -186,8 +191,8 @@ let g:NERDTreePatternMatchHighlightFullName = 1
 """"""""""""""""""""""""""""""""""""""""""
 "set for easymotion                      "
 """"""""""""""""""""""""""""""""""""""""""
-map  z <Plug>(easymotion-bd-w)
-nmap z <Plug>(easymotion-overwin-w)
+map  <C-u> <Plug>(easymotion-bd-w)
+nmap <C-u> <Plug>(easymotion-overwin-w)
 " map  f <Plug>(easymotion-bd-f)
 " nmap f <Plug>(easymotion-overwin-f)
 " nmap s <Plug>(easymotion-overwin-f2)
@@ -239,7 +244,7 @@ let g:NERDCommentEmptyLines = 1
  let g:NERDTrimTrailingWhitespace = 1
 " Enable NERDCommenterToggle to check all selected lines is commented or not 
 let g:NERDToggleCheckAllLines = 1
-nmap m <leader>c<space>
+nmap <C-m> <leader>ci
 """"""""""""""""""""""""""""""""""""""""""
 "set for fugitive                        "
 """"""""""""""""""""""""""""""""""""""""""
@@ -247,8 +252,8 @@ set diffopt+=vertical
 """"""""""""""""""""""""""""""""""""""""""
 "set for ctags                           "
 """"""""""""""""""""""""""""""""""""""""""
-nnoremap f <C-]>
-nnoremap t <C-t>
+nnoremap <leader>f <C-]>
+nnoremap <leader>t <C-t>
 """"""""""""""""""""""""""""""""""""""""""
 "set for tagbar                          "
 """"""""""""""""""""""""""""""""""""""""""
@@ -266,3 +271,7 @@ let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
 let g:cpp_experimental_template_highlight = 1
 let g:cpp_experimental_template_highlight = 1
+""""""""""""""""""""""""""""""""""""""""""
+"set for ctrl p                          "
+""""""""""""""""""""""""""""""""""""""""""
+let g:ctrlp_map = 'z'
