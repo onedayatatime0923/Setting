@@ -141,3 +141,6 @@ alias tb='tensorboard --logdir '
 # colorful ascii plot                                              #
 ####################################################################
 screenfetch -A 'Mac OS X' -t | /usr/games/lolcat -p 1
+
+bindkey "^P" up-line-or-beginning-search
+bindkey "^N" down-line-or-beginning-search
