@@ -6,10 +6,6 @@ mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 cd ~/.vim/bundle
-# install conflict-marker
-git clone https://github.com/rhysd/conflict-marker.vim.git
-# install ctrlp.vim
-git clone https://github.com/ctrlpvim/ctrlp.vim.git
 # install molokai
 git clone https://github.com/tomasr/molokai.git
 # install nerdcommenter
@@ -42,6 +38,8 @@ git clone https://github.com/ludovicchabant/vim-gutentags.git
 git clone https://github.com/tiagofumo/vim-nerdtree-syntax-highlight.git
 # install vim-nerdtree-tabs
 git clone https://github.com/jistr/vim-nerdtree-tabs.git
+# install vimtex
+git clone git@github.com:lervag/vimtex.git
 # install youcompleteme
 sudo apt-get install build-essential cmake
 sudo apt-get install python-dev python3-dev
@@ -50,6 +48,10 @@ cd YouCompleteMe
 git submodule update --init --recursive
 ./install.py --clang-completer
 ./install.py
+# install conflict-marker
+git clone https://github.com/rhysd/conflict-marker.vim.git
+# install ctrlp.vim
+git clone https://github.com/ctrlpvim/ctrlp.vim.git
 # install ctags
 sudo apt-get install ctags
 # install font
