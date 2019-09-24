@@ -270,6 +270,7 @@ nnoremap <leader>t <C-t>
 " botright cwindow
 " to
 " botright cwindow 2
+let g:vimtex_view_method = 'zathura'
 """"""""""""""""""""""""""""""""""""""""""
 " YCM                                    "
 """"""""""""""""""""""""""""""""""""""""""
