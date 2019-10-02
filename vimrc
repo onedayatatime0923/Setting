@@ -54,9 +54,9 @@ set cindent
 "for tab                                 "
 """"""""""""""""""""""""""""""""""""""""""
 set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set smarttab
 
 """"""""""""""""""""""""""""""""""""""""""
@@ -130,13 +130,45 @@ nnoremap ) <C-w>>
 set splitbelow
 set splitright
 """"""""""""""""""""""""""""""""""""""""""
-" Tab switching                          "
+" Tab control                            "
 """"""""""""""""""""""""""""""""""""""""""
 nnoremap <C-n> gt
 nnoremap <C-p> gT
 noremap <F6> :-tabmove<cr>
 noremap <F7> :+tabmove<cr>
+noremap <F9> :tabclose<cr>
+noremap <F9> : call CloseTab()<cr>
+function CloseTab()
+	if (tabpagenr("$") == 1)
+    qa
+	else
+    tabclose
+	endif
+endfunction
 
+autocmd BufEnter * call CheckLeftBuffers()
+function! CheckLeftBuffers()
+  let i = 1
+  while i <= winnr('$')
+    if getbufvar(winbufnr(i), '&buftype') == 'help' ||
+        \ getbufvar(winbufnr(i), '&buftype') == 'quickfix' ||
+        \ exists('t:NERDTreeBufName') &&
+        \   bufname(winbufnr(i)) == t:NERDTreeBufName ||
+        \ bufname(winbufnr(i)) == '__Tag_List__'
+      let i += 1
+    else
+      break
+    endif
+  endwhile
+  if i == winnr('$') + 1
+    if tabpagenr('$') == 1
+      qall
+    else
+      tabclose
+    endif
+  endif
+  unlet i
+endfunction
 """"""""""""""""""""""""""""""""""""""""""
 "set for foldmethod                      "
 """"""""""""""""""""""""""""""""""""""""""
@@ -184,7 +216,6 @@ function ToggleNerdTree()
   echo "Toggle Nerd Tree.(NERDTreeTabsToggle, NERDTreeTabsFind)"
 endfunction
 nnoremap <silent> <C-d> :NERDTreeTabsFind <CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeShowBookmarks=1
 let g:NERDTreeWinSize=20
 let g:nerdtree_tabs_open_on_console_startup=1
@@ -214,6 +245,7 @@ set statusline+=%*
 let g:syntastic_cpp_checkers=[]
 let g:syntastic_python_checkers=['pyflakes']
 let g:syntastic_python_pyflakes_exec ='pyflakes3'
+let g:syntastic_tex_checkers=[]
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_loc_list_height= 2
