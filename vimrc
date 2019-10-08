@@ -54,9 +54,9 @@ set cindent
 "for tab                                 "
 """"""""""""""""""""""""""""""""""""""""""
 set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set smarttab
 
 """"""""""""""""""""""""""""""""""""""""""
@@ -130,13 +130,45 @@ nnoremap ) <C-w>>
 set splitbelow
 set splitright
 """"""""""""""""""""""""""""""""""""""""""
-" Tab switching                          "
+" Tab control                            "
 """"""""""""""""""""""""""""""""""""""""""
 nnoremap <C-n> gt
 nnoremap <C-p> gT
 noremap <F6> :-tabmove<cr>
 noremap <F7> :+tabmove<cr>
+noremap <F9> :tabclose<cr>
+noremap <F9> : call CloseTab()<cr>
+function CloseTab()
+	if (tabpagenr("$") == 1)
+    qa
+	else
+    tabclose
+	endif
+endfunction
 
+autocmd BufEnter * call CheckLeftBuffers()
+function! CheckLeftBuffers()
+  let i = 1
+  while i <= winnr('$')
+    if getbufvar(winbufnr(i), '&buftype') == 'help' ||
+        \ getbufvar(winbufnr(i), '&buftype') == 'quickfix' ||
+        \ exists('t:NERDTreeBufName') &&
+        \   bufname(winbufnr(i)) == t:NERDTreeBufName ||
+        \ bufname(winbufnr(i)) == '__Tag_List__'
+      let i += 1
+    else
+      break
+    endif
+  endwhile
+  if i == winnr('$') + 1
+    if tabpagenr('$') == 1
+      qall
+    else
+      tabclose
+    endif
+  endif
+  unlet i
+endfunction
 """"""""""""""""""""""""""""""""""""""""""
 "set for foldmethod                      "
 """"""""""""""""""""""""""""""""""""""""""
@@ -150,81 +182,7 @@ nnoremap <space> za
 nnoremap <C-g> ]c
 nnoremap <C-o> [c
 """"""""""""""""""""""""""""""""""""""""""
-"set for YCM                             "
-""""""""""""""""""""""""""""""""""""""""""
-set completeopt-=preview
-let g:ycm_show_diagnostics_ui = 0
-let g:ycm_enable_diagnostic_signs = 0
-let g:ycm_enable_diagnostic_highlighting = 0
-let g:ycm_echo_current_diagnostic = 0
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/youcompleteme/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-""""""""""""""""""""""""""""""""""""""""""
-"set for nerdtree                        "
-""""""""""""""""""""""""""""""""""""""""""
-autocmd vimenter * silent NERDTree Home| wincmd p 
-autocmd FileType nerdtree setlocal nocursorcolumn nocursorline
-map <C-t> : silent call ToggleNerdTree()<CR>
-function ToggleNerdTree()
-  NERDTreeTabsToggle
-  wincmd W
-  NERDTreeTabsFind
-  echo "Toggle Nerd Tree.(NERDTreeTabsToggle, NERDTreeTabsFind)"
-endfunction
-nnoremap <silent> <C-d> :NERDTreeTabsFind <CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-let NERDTreeShowBookmarks=1
-let g:NERDTreeWinSize=20
-let g:nerdtree_tabs_open_on_console_startup=1
-let g:nerdtree_tabs_autofind=1
-""""""""""""""""""""""""""""""""""""""""""
-"Highlight pimary vim highlighting groups"
-""""""""""""""""""""""""""""""""""""""""""
-hi Directory cterm=bold ctermfg=Magenta
-""""""""""""""""""""""""""""""""""""""""""
-" NERDTree File highlighting             "
-""""""""""""""""""""""""""""""""""""""""""
-let g:NERDTreeHighlightFolders = 1 " enables folder icon highlighting using exact match
-let g:NERDTreeHighlightFoldersFullName = 1 " highlights the folder name
-let g:NERDTreeFileExtensionHighlightFullName = 1
-let g:NERDTreeExactMatchHighlightFullName = 1
-let g:NERDTreePatternMatchHighlightFullName = 1
-""""""""""""""""""""""""""""""""""""""""""
-"set for easymotion                      "
-""""""""""""""""""""""""""""""""""""""""""
-map  <C-u> <Plug>(easymotion-bd-w)
-nmap <C-u> <Plug>(easymotion-overwin-w)
-" map  f <Plug>(easymotion-bd-f)
-" nmap f <Plug>(easymotion-overwin-f)
-" nmap s <Plug>(easymotion-overwin-f2)
-" map <Leader>L <Plug>(easymotion-bd-jk)
-" nmap <Leader>L <Plug>(easymotion-overwin-line)
-""""""""""""""""""""""""""""""""""""""""""
-"set for syntastic                       "
-""""""""""""""""""""""""""""""""""""""""""
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_cpp_checkers=[]
-let g:syntastic_python_checkers=['pyflakes']
-let g:syntastic_python_pyflakes_exec ='pyflakes3'
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_loc_list_height=2
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-""""""""""""""""""""""""""""""""""""""""""
-"set for airline                         "
-""""""""""""""""""""""""""""""""""""""""""
-set laststatus=2
-let g:airline_powerline_fonts = 1
-let g:airline_theme='molokai'
-""""""""""""""""""""""""""""""""""""""""""
-" enable tabline                         "
-""""""""""""""""""""""""""""""""""""""""""
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_splits = 0
-""""""""""""""""""""""""""""""""""""""""""
-"set for nerdcommenter                   "
+" Nerdcommenter                          "
 """"""""""""""""""""""""""""""""""""""""""
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
@@ -246,25 +204,71 @@ let g:NERDCommentEmptyLines = 1
 let g:NERDToggleCheckAllLines = 1
 map <C-m> <leader>c<space>
 """"""""""""""""""""""""""""""""""""""""""
-"set for fugitive                        "
+" Nerdtree                               "
 """"""""""""""""""""""""""""""""""""""""""
-set diffopt+=vertical
+autocmd vimenter * silent NERDTree Home| wincmd p 
+autocmd FileType nerdtree setlocal nocursorcolumn nocursorline
+map <C-t> : silent call ToggleNerdTree()<CR>
+function ToggleNerdTree()
+  NERDTreeTabsToggle
+  wincmd W
+  NERDTreeTabsFind
+  echo "Toggle Nerd Tree.(NERDTreeTabsToggle, NERDTreeTabsFind)"
+endfunction
+nnoremap <silent> <C-d> :NERDTreeTabsFind <CR>
+let NERDTreeShowBookmarks=1
+let g:NERDTreeWinSize=20
+let g:nerdtree_tabs_open_on_console_startup=1
+let g:nerdtree_tabs_autofind=1
 """"""""""""""""""""""""""""""""""""""""""
-"set for ctags                           "
+" Nerdtree Directory Highlighting        "
 """"""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>f <C-]>
-nnoremap <leader>t <C-t>
+hi Directory cterm=bold ctermfg=Magenta
 """"""""""""""""""""""""""""""""""""""""""
-"set for tagbar                          "
+" NERDTree File Highlighting             "
+""""""""""""""""""""""""""""""""""""""""""
+let g:NERDTreeHighlightFolders = 1 " enables folder icon highlighting using exact match
+let g:NERDTreeHighlightFoldersFullName = 1 " highlights the folder name
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
+""""""""""""""""""""""""""""""""""""""""""
+" NumbersToggle                          "
+""""""""""""""""""""""""""""""""""""""""""
+nnoremap <F3> :NumbersToggle<CR>
+""""""""""""""""""""""""""""""""""""""""""
+" Syntastic                              "
+""""""""""""""""""""""""""""""""""""""""""
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_cpp_checkers=[]
+let g:syntastic_python_checkers=['pyflakes']
+let g:syntastic_python_pyflakes_exec ='pyflakes3'
+let g:syntastic_tex_checkers=[]
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_loc_list_height= 2
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+""""""""""""""""""""""""""""""""""""""""""
+" Tagbar                                 "
 """"""""""""""""""""""""""""""""""""""""""
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_width=30
 """"""""""""""""""""""""""""""""""""""""""
-"set for NumbersToggle                   "
+" Airline                                "
 """"""""""""""""""""""""""""""""""""""""""
-nnoremap <F3> :NumbersToggle<CR>
+set laststatus=2
+let g:airline_powerline_fonts = 1
+let g:airline_theme='molokai'
 """"""""""""""""""""""""""""""""""""""""""
-"set for cpp syntax                      "
+" Airline tabline                        "
+""""""""""""""""""""""""""""""""""""""""""
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_splits = 0
+""""""""""""""""""""""""""""""""""""""""""
+" Cpp syntax                             "
 """"""""""""""""""""""""""""""""""""""""""
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
@@ -272,6 +276,43 @@ let g:cpp_class_decl_highlight = 1
 let g:cpp_experimental_template_highlight = 1
 let g:cpp_experimental_template_highlight = 1
 """"""""""""""""""""""""""""""""""""""""""
-"set for ctrl p                          "
+" Easymotion                             "
+""""""""""""""""""""""""""""""""""""""""""
+map  <C-u> <Plug>(easymotion-bd-w)
+nmap <C-u> <Plug>(easymotion-overwin-w)
+" map  f <Plug>(easymotion-bd-f)
+" nmap f <Plug>(easymotion-overwin-f)
+" nmap s <Plug>(easymotion-overwin-f2)
+" map <Leader>L <Plug>(easymotion-bd-jk)
+" nmap <Leader>L <Plug>(easymotion-overwin-line)
+""""""""""""""""""""""""""""""""""""""""""
+" Fugitive                               "
+""""""""""""""""""""""""""""""""""""""""""
+set diffopt+=vertical
+""""""""""""""""""""""""""""""""""""""""""
+" Gutentags                              "
+""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>f <C-]>
+nnoremap <leader>t <C-t>
+""""""""""""""""""""""""""""""""""""""""""
+" Vimtex                                 "
+""""""""""""""""""""""""""""""""""""""""""
+" change vimtex/autoload/vimtex/qf.vim : 84
+" from
+" botright cwindow
+" to
+" botright cwindow 2
+let g:vimtex_view_method = 'zathura'
+""""""""""""""""""""""""""""""""""""""""""
+" YCM                                    "
+""""""""""""""""""""""""""""""""""""""""""
+set completeopt-=preview
+let g:ycm_show_diagnostics_ui = 0
+let g:ycm_enable_diagnostic_signs = 0
+let g:ycm_enable_diagnostic_highlighting = 0
+let g:ycm_echo_current_diagnostic = 0
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/youcompleteme/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+""""""""""""""""""""""""""""""""""""""""""
+" Ctrl p                                 "
 """"""""""""""""""""""""""""""""""""""""""
 let g:ctrlp_map = 'z'
