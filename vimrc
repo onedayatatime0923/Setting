@@ -54,9 +54,9 @@ set cindent
 "for tab                                 "
 """"""""""""""""""""""""""""""""""""""""""
 set expandtab
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set smarttab
 
 """"""""""""""""""""""""""""""""""""""""""
@@ -315,4 +315,4 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/youcompleteme/third_party/ycmd/
 """"""""""""""""""""""""""""""""""""""""""
 " Ctrl p                                 "
 """"""""""""""""""""""""""""""""""""""""""
-let g:ctrlp_map = 'z'
+let g:ctrlp_map = 't'
