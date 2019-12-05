@@ -102,10 +102,10 @@ endfunction
 """"""""""""""""""""""""""""""""""""""""""
 "movement in line                        "
 """"""""""""""""""""""""""""""""""""""""""
-nnoremap k gk
-nnoremap j gj
-nnoremap gk k
-nnoremap gj j
+noremap k gk
+noremap j gj
+noremap gk k
+noremap gj j
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 """"""""""""""""""""""""""""""""""""""""""
