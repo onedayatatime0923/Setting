@@ -71,6 +71,7 @@ set showcmd
 set showmode
 set wrap
 set mouse=a
+set clipboard=unnamedplus
 """"""""""""""""""""""""""""""""""""""""""
 "search in visual mode                   "
 """"""""""""""""""""""""""""""""""""""""""
