@@ -24,7 +24,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tomasr/molokai'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'myusuf3/numbers.vim'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-airline/vim-airline'
@@ -279,7 +278,14 @@ let g:NERDTreePatternMatchHighlightFullName = 1
 """"""""""""""""""""""""""""""""""""""""""
 " NumbersToggle                          "
 """"""""""""""""""""""""""""""""""""""""""
-nnoremap <F3> :NumbersToggle<CR>
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set norelativenumber
+  else
+    set relativenumber
+  endif
+endfunc
+nnoremap <F3> :call NumberToggle()<cr>
 """"""""""""""""""""""""""""""""""""""""""
 " Syntastic                              "
 """"""""""""""""""""""""""""""""""""""""""
