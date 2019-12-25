@@ -7,6 +7,7 @@ set encoding=utf8
 "let vim different from vi               "
 """"""""""""""""""""""""""""""""""""""""""
 set nocompatible  
+syntax enable
 """"""""""""""""""""""""""""""""""""""""""
 "set vundle                              "
 """"""""""""""""""""""""""""""""""""""""""
