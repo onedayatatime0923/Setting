@@ -224,6 +224,8 @@ nnoremap <space> za
 """"""""""""""""""""""""""""""""""""""""""
 nnoremap <C-g> ]c
 nnoremap <C-o> [c
+command! Difft windo diffthis
+command! Diffo windo diffoff
 """"""""""""""""""""""""""""""""""""""""""
 " Nerdcommenter                          "
 """"""""""""""""""""""""""""""""""""""""""
