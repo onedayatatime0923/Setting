@@ -100,7 +100,11 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set smarttab
-
+""""""""""""""""""""""""""""""""""""""""""
+"for undo                                "
+""""""""""""""""""""""""""""""""""""""""""
+set undofile 
+set undodir=~/.vim/undodir
 """"""""""""""""""""""""""""""""""""""""""
 "other setting                           "
 """"""""""""""""""""""""""""""""""""""""""

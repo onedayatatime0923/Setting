@@ -1,8 +1,9 @@
 
 # install necessity
 sudo apt-get install vim curl
+mkdir -p ~/.vim/bundle
+mkdir -p ~/.vim/undodir
 # install bundle
-mkdir -p ~/.vim/bundle && \
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # install youcompleteme
