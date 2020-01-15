@@ -118,6 +118,7 @@ set showmode
 set wrap
 set mouse=a
 set clipboard=unnamedplus
+set noeb
 """"""""""""""""""""""""""""""""""""""""""
 "search in visual mode                   "
 """"""""""""""""""""""""""""""""""""""""""
@@ -221,7 +222,7 @@ endfunction
 """"""""""""""""""""""""""""""""""""""""""
 set foldmethod=indent
 set foldnestmax=2
-set foldcolumn=0
+set foldcolumn=1
 nnoremap <space> za
 """"""""""""""""""""""""""""""""""""""""""
 "set for vimdiff                         "
