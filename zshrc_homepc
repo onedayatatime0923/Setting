@@ -87,7 +87,14 @@ export PATH=/usr/local/cuda-9.0/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 export LD_LIBRARY_PATH=${LD_LIBRARY_PATH:+${LD_LIBRARY_PATH}:}/usr/local/cuda/extras/CUPTI/lib64
 export CUDA_HOME=/usr/local/cuda-9.0
+
 PROMPT="${ret_status}　%{$fg_bold[magenta]%}HOMEPC%{$reset_color%} %{$fg_bold[cyan]%}%T%{$reset_color%} %{$fg_bold[cyan]%}%c%{$reset_color%} "
+
+####################################################################
+#  Install Ruby Gems to ~/gems                                     #
+####################################################################
+export GEM_HOME="$HOME/gems"
+export PATH="$HOME/gems/bin:$PATH"
 ####################################################################
 
 # You may need to manually set your language environment
