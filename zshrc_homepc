@@ -87,7 +87,7 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 ####################################################################
-#  add cuda tools to command path                                  #
+#  Add cuda tools to command path                                  #
 ####################################################################
 export PATH=/usr/local/cuda-9.0/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
@@ -103,6 +103,10 @@ PROMPT+="　%{$fg_bold[magenta]%}HOMEPC%{$reset_color%} %{$fg_bold[cyan]%}%T%{$r
 ####################################################################
 export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
+####################################################################
+#  Add local path                                                  #
+####################################################################
+export PATH="$HOME/.local/bin/:$PATH"
 ####################################################################
 
 # You may need to manually set your language environment
