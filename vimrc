@@ -361,6 +361,7 @@ nnoremap <leader>t <C-t>
 " to
 " botright cwindow 2
 let g:vimtex_view_method = 'zathura'
+let g:tex_flavor = 'latex'
 """"""""""""""""""""""""""""""""""""""""""
 " YCM                                    "
 """"""""""""""""""""""""""""""""""""""""""
