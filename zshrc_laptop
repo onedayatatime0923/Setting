@@ -94,6 +94,7 @@ export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY
 export LD_LIBRARY_PATH=${LD_LIBRARY_PATH:+${LD_LIBRARY_PATH}:}/usr/local/cuda/extras/CUPTI/lib64
 export CUDA_HOME=/usr/local/cuda-9.0
 
+
 PROMPT="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
 PROMPT+="　%{$fg_bold[magenta]%}LAPTOP%{$reset_color%} %{$fg_bold[cyan]%}%T%{$reset_color%} %{$fg_bold[cyan]%}%c%{$reset_color%} "
 
@@ -137,7 +138,7 @@ alias rm='rm -i'
 alias gh='cd ~/Github'
 alias ptt='ssh bbsu@ptt.cc'
 alias gputem='nvidia-settings -q gpucoretemp'
-alias sshpc='ssh kevin@220.132.13.37 -p 6666'
+alias sshpc='ssh kevin@220.132.13.37 -p 6666 -X'
 alias sftppc='sftp -P 6666 kevin@220.132.13.37'
 function sshlab {
   ssh b04901136@eda.ee.ntu.edu.tw -p ${1:-50032} -X
