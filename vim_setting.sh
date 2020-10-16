@@ -1,6 +1,6 @@
 
 # install necessity
-sudo apt-get install vim curl
+sudo apt-get install vim vim-gtk curl
 mkdir -p ~/.vim/bundle
 mkdir -p ~/.vim/undodir
 # install bundle
