@@ -8,7 +8,7 @@ export ZSH="/home/kevin/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="spaceship"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -74,6 +74,7 @@ plugins=(
   extract
   z
   virtualenvwrapper
+  zsh-syntax-highlighting
 )
 ####################################################################
 # virtual env wrapper                                              #
@@ -94,8 +95,8 @@ export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY
 export LD_LIBRARY_PATH=${LD_LIBRARY_PATH:+${LD_LIBRARY_PATH}:}/usr/local/cuda/extras/CUPTI/lib64
 export CUDA_HOME=/usr/local/cuda-9.0
 
-PROMPT="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
-PROMPT+="　%{$fg_bold[magenta]%}HOMEPC%{$reset_color%} %{$fg_bold[cyan]%}%T%{$reset_color%} %{$fg_bold[cyan]%}%c%{$reset_color%} "
+SPACESHIP_PROMPT_ADD_NEWLINE=false
+PROMPT='　%{$fg_bold[magenta]%}HOMEPC%{$reset_color%} %{$fg_bold[cyan]%}%T%{$reset_color%} $(spaceship_prompt)'
 
 ####################################################################
 #  Install Ruby Gems to ~/gems                                     #
@@ -156,10 +157,10 @@ alias sftpRLab='sftp b04901136@140.112.175.122'
 alias movie='mpv --cache-secs=600'
 
 alias tb='tensorboard --logdir '
+
+bindkey "^P" up-line-or-beginning-search
+bindkey "^N" down-line-or-beginning-search
 ####################################################################
 # colorful ascii plot                                              #
 ####################################################################
 screenfetch -A 'Mac OS X' -t | /usr/games/lolcat -p 1
-
-bindkey "^P" up-line-or-beginning-search
-bindkey "^N" down-line-or-beginning-search
