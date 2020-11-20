@@ -138,7 +138,7 @@ alias rm='rm -i'
 alias gh='cd ~/Github'
 alias ptt='ssh bbsu@ptt.cc'
 alias gputem='nvidia-settings -q gpucoretemp'
-alias sshpc='ssh kevin@220.132.13.37 -p 6666 -X'
+alias sshpc='ssh kevin@220.132.13.37 -p 6666 -XY'
 alias sftppc='sftp -P 6666 kevin@220.132.13.37'
 function sshlab {
   ssh b04901136@eda.ee.ntu.edu.tw -p ${1:-50032} -X
