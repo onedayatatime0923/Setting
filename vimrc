@@ -357,11 +357,6 @@ nnoremap <leader>t <C-t>
 """"""""""""""""""""""""""""""""""""""""""
 " Vimtex                                 "
 """"""""""""""""""""""""""""""""""""""""""
-" change vimtex/autoload/vimtex/qf.vim : 84
-" from
-" botright cwindow
-" to
-" botright cwindow 2
 let g:vimtex_view_method = 'zathura'
 let g:tex_flavor = 'latex'
 """"""""""""""""""""""""""""""""""""""""""
