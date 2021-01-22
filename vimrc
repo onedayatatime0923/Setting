@@ -32,6 +32,7 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plugin 'jistr/vim-nerdtree-tabs'
@@ -40,7 +41,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rhysd/conflict-marker.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'airblade/vim-gitgutter'
+Plugin 'matchit.zip'
 
 
 " All of your Plugins must be added before the following line
