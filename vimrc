@@ -40,6 +40,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rhysd/conflict-marker.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'airblade/vim-gitgutter'
 
 
 " All of your Plugins must be added before the following line
@@ -164,18 +165,18 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
-" maximize horizontal direction window
-nnoremap [ <C-w>_
 " maximize vertical direction window
-nnoremap ] <C-w>\|
+nnoremap [ <C-w>\|
+" maximize horizontal direction window
+nnoremap ] <C-w>_
 " equalize both horizontal vertical direction window
 nnoremap = <C-w>=
-" increase/ decrease horizontal direction window
-nnoremap + <C-W>+
-nnoremap - <C-W>-
 " increase/ decrease vertical direction window
 nnoremap ( <C-w><
 nnoremap ) <C-w>>
+" increase/ decrease horizontal direction window
+nnoremap + <C-W>+
+nnoremap - <C-W>-
 set splitbelow
 set splitright
 """"""""""""""""""""""""""""""""""""""""""
