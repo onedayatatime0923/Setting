@@ -1,1 +1,1 @@
-source ~/Setting/vimrc
+source ~/Setting/vim_setting
