@@ -39,11 +39,11 @@ Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'lervag/vimtex'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'mg979/vim-visual-multi', {'branch': 'master'}
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rhysd/conflict-marker.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'matchit.zip'
-
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -131,8 +131,8 @@ vnoremap // y/\V<C-r>=escape(@",'/\')<CR><CR>
 """"""""""""""""""""""""""""""""""""""""""
 "Control c                               "
 """"""""""""""""""""""""""""""""""""""""""
-map <C-c> : silent call SwitchFullSimpleMode()<CR>
-map! <C-c> <Esc>:call SwitchFullSimpleMode()<CR>
+map <C-x> : silent call SwitchFullSimpleMode()<CR>
+map! <C-x> <Esc>:call SwitchFullSimpleMode()<CR>
 function SwitchFullSimpleMode()
 	if (&mouse == "a")
     NERDTreeTabsClose
@@ -361,6 +361,11 @@ nnoremap <leader>t <C-t>
 """"""""""""""""""""""""""""""""""""""""""
 let g:vimtex_view_method = 'zathura'
 let g:tex_flavor = 'latex'
+""""""""""""""""""""""""""""""""""""""""""
+" Vim visual multi                       "
+""""""""""""""""""""""""""""""""""""""""""
+let g:VM_maps = {}
+let g:VM_maps["Add Cursor At Pos"]            = '<C-c>'
 """"""""""""""""""""""""""""""""""""""""""
 " YCM                                    "
 """"""""""""""""""""""""""""""""""""""""""
