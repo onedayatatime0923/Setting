@@ -37,6 +37,8 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
 Plugin 'lervag/vimtex'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'mg979/vim-visual-multi', {'branch': 'master'}
