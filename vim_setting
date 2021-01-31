@@ -189,8 +189,8 @@ set splitright
 """"""""""""""""""""""""""""""""""""""""""
 nnoremap <C-n> gt
 nnoremap <C-p> gT
-noremap <F6> :-tabmove<cr>
-noremap <F7> :+tabmove<cr>
+noremap <F5> :-tabmove<cr>
+noremap <F6> :+tabmove<cr>
 noremap <F9> :tabclose<cr>
 noremap <F9> : call CloseTab()<cr>
 function CloseTab()
@@ -367,8 +367,10 @@ let g:tex_flavor = 'latex'
 " Vim visual multi                       "
 """"""""""""""""""""""""""""""""""""""""""
 let g:VM_maps = {}
-let g:VM_maps["Add Cursor At Pos"]          = '<C-c>'
 let g:VM_maps['Find Under']                 = ''
+let g:VM_maps["Add Cursor At Pos"]          = '<C-c>'
+let g:VM_maps["Add Cursor Down"]            = '<F7>'
+let g:VM_maps["Add Cursor Up"]              = '<F8>'
 """"""""""""""""""""""""""""""""""""""""""
 " YCM                                    "
 """"""""""""""""""""""""""""""""""""""""""
