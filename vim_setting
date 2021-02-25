@@ -191,7 +191,6 @@ nnoremap <C-n> gt
 nnoremap <C-p> gT
 noremap <F5> :-tabmove<cr>
 noremap <F6> :+tabmove<cr>
-noremap <F9> :tabclose<cr>
 noremap <F9> : call CloseTab()<cr>
 function CloseTab()
 	if (tabpagenr("$") == 1)
