@@ -318,7 +318,7 @@ let g:syntastic_check_on_wq = 0
 """"""""""""""""""""""""""""""""""""""""""
 " Tagbar                                 "
 """"""""""""""""""""""""""""""""""""""""""
-nmap <F8> :TagbarToggle<CR>
+nmap <F10> :TagbarToggle<CR>
 let g:tagbar_width=30
 """"""""""""""""""""""""""""""""""""""""""
 " Airline                                "
