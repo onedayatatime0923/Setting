@@ -80,8 +80,8 @@ hi String ctermfg =cyan
 set cursorline
 set cursorcolumn
 set hlsearch
-"hi CursorLine ctermbg=31
-"hi CursorColumn ctermbg=31
+hi CursorLine ctermbg=31
+hi CursorColumn ctermbg=31
 hi Search cterm=reverse ctermbg=none ctermfg=none 
 
 """"""""""""""""""""""""""""""""""""""""""
@@ -178,17 +178,17 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 " maximize vertical direction window
-"nnoremap [ <C-w>\|
+nnoremap _ <C-w>_
 " maximize horizontal direction window
-"nnoremap ] <C-w>_
+nnoremap \| <C-w>\|
 " equalize both horizontal vertical direction window
 nnoremap = <C-w>=
 " increase/ decrease vertical direction window
-nnoremap ( <C-w><
-nnoremap ) <C-w>>
-" increase/ decrease horizontal direction window
 nnoremap + <C-W>+
 nnoremap - <C-W>-
+" increase/ decrease horizontal direction window
+nnoremap ( <C-w><
+nnoremap ) <C-w>>
 set splitbelow
 set splitright
 """"""""""""""""""""""""""""""""""""""""""
@@ -240,8 +240,6 @@ nnoremap <space> za
 """"""""""""""""""""""""""""""""""""""""""
 "set for vimdiff                         "
 """"""""""""""""""""""""""""""""""""""""""
-nnoremap <C-g> ]c
-nnoremap <C-o> [c
 command! Difft windo diffthis
 command! Diffo windo diffoff
 """"""""""""""""""""""""""""""""""""""""""
