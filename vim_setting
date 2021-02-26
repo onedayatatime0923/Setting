@@ -41,6 +41,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'lervag/vimtex'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'tpope/vim-unimpaired'
 Plugin 'mg979/vim-visual-multi', {'branch': 'master'}
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rhysd/conflict-marker.vim'
@@ -79,8 +80,8 @@ hi String ctermfg =cyan
 set cursorline
 set cursorcolumn
 set hlsearch
-hi CursorLine cterm=none ctermbg=31 ctermfg=White
-hi CursorColumn cterm=none ctermbg=31 ctermfg=White
+"hi CursorLine ctermbg=31
+"hi CursorColumn ctermbg=31
 hi Search cterm=reverse ctermbg=none ctermfg=none 
 
 """"""""""""""""""""""""""""""""""""""""""
@@ -112,6 +113,12 @@ set smarttab
 """"""""""""""""""""""""""""""""""""""""""
 set undofile 
 set undodir=~/.vim/undodir
+""""""""""""""""""""""""""""""""""""""""""
+"for spell check                         "
+""""""""""""""""""""""""""""""""""""""""""
+set spell
+set spelllang=en
+set spellfile=~/Setting/en.utf-8.add
 """"""""""""""""""""""""""""""""""""""""""
 "other setting                           "
 """"""""""""""""""""""""""""""""""""""""""
