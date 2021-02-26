@@ -178,9 +178,9 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 " maximize vertical direction window
-nnoremap [ <C-w>\|
+"nnoremap [ <C-w>\|
 " maximize horizontal direction window
-nnoremap ] <C-w>_
+"nnoremap ] <C-w>_
 " equalize both horizontal vertical direction window
 nnoremap = <C-w>=
 " increase/ decrease vertical direction window
