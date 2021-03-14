@@ -117,6 +117,10 @@ set undodir=~/.vim/undodir
 set spelllang=en
 set spellfile=~/Setting/en.utf-8.add
 """"""""""""""""""""""""""""""""""""""""""
+"for disable bell                        "
+""""""""""""""""""""""""""""""""""""""""""
+set noerrorbells visualbell t_vb=
+""""""""""""""""""""""""""""""""""""""""""
 "other setting                           "
 """"""""""""""""""""""""""""""""""""""""""
 set confirm
