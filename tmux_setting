@@ -23,8 +23,7 @@ bind-key b copy-mode\;\
            send-keys -X start-of-line\;\
            send-keys -X search-backward "　"
 #setting for join pane
-bind-key t choose-window "join-pane -t '%%'"
-bind-key s choose-window "join-pane -s '%%'"
+bind-key w choose-window "move-window -t '%%'"
 
 #setting for tmux colors solarized
 set -g @colors-solarized 'dark'
