@@ -142,8 +142,8 @@ vnoremap // y/\V<C-r>=escape(@",'/\')<CR><CR>
 """"""""""""""""""""""""""""""""""""""""""
 "Control c                               "
 """"""""""""""""""""""""""""""""""""""""""
-map <C-x> : silent call SwitchFullSimpleMode()<CR>
-map! <C-x> <Esc>:call SwitchFullSimpleMode()<CR>
+map <F4> : silent call SwitchFullSimpleMode()<CR>
+map! <F4> <Esc>:call SwitchFullSimpleMode()<CR>
 function SwitchFullSimpleMode()
 	if (&mouse == "a")
     NERDTreeTabsClose
@@ -255,6 +255,11 @@ function! NumberToggle()
   endif
 endfunc
 nnoremap <F3> :call NumberToggle()<cr>
+""""""""""""""""""""""""""""""""""""""""""
+" Macro                                  "
+""""""""""""""""""""""""""""""""""""""""""
+let @i = 'o\begin{itemize}\item \end{itemize}k'
+let @e = 'o\begin{enumerate}\item \end{enumerate}k'
 """"""""""""""""""""""""""""""""""""""""""
 " Nerdcommenter                          "
 """"""""""""""""""""""""""""""""""""""""""
