@@ -260,6 +260,7 @@ nnoremap <F3> :call NumberToggle()<cr>
 """"""""""""""""""""""""""""""""""""""""""
 let @i = 'o\begin{itemize}\item \end{itemize}k'
 let @e = 'o\begin{enumerate}\item \end{enumerate}k'
+let @a = 'i\begin{array}{ll} & \end{array}5b'
 """"""""""""""""""""""""""""""""""""""""""
 " Nerdcommenter                          "
 """"""""""""""""""""""""""""""""""""""""""
