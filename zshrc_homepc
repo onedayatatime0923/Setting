@@ -92,10 +92,10 @@ source $ZSH/oh-my-zsh.sh
 ####################################################################
 #  Add cuda tools to command path                                  #
 ####################################################################
-export PATH=/usr/local/cuda-9.0/bin${PATH:+:${PATH}}
-export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+export PATH=/usr/local/cuda-11.0/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-11.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 export LD_LIBRARY_PATH=${LD_LIBRARY_PATH:+${LD_LIBRARY_PATH}:}/usr/local/cuda/extras/CUPTI/lib64
-export CUDA_HOME=/usr/local/cuda-9.0
+export CUDA_HOME=/usr/local/cuda-11.0
 
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 PROMPT='　%{$fg_bold[magenta]%}HOMEPC%{$reset_color%} %{$fg_bold[cyan]%}%T%{$reset_color%} $(spaceship_prompt)'
@@ -142,10 +142,12 @@ alias ptt='ssh bbsu@ptt.cc'
 alias gputem='nvidia-settings -q gpucoretemp'
 alias sshpc='ssh kevin@220.132.13.37 -p 6666 -XY'
 alias sftppc='sftp -P 6666 kevin@220.132.13.37'
-function sshlab {
+alias sshlab='ssh kcchang@leonardo.usc.edu'
+alias sftplab='sftp kcchang@leonardo.usc.edu'
+function sshYlab {
   ssh b04901136@eda.ee.ntu.edu.tw -p ${1:-50032} -X
 }
-function sftplab {
+function sftpYlab {
   sftp -P ${1:-50032} b04901136@eda.ee.ntu.edu.tw
 }
 function sshedaunion {
