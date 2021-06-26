@@ -237,6 +237,7 @@ endfunction
 set foldmethod=indent
 set foldnestmax=2
 set foldcolumn=1
+set foldignore=
 nnoremap <space> za
 """"""""""""""""""""""""""""""""""""""""""
 "set for vimdiff                         "
