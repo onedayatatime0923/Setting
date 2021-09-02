@@ -9,3 +9,4 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 # for prompt
 sudo apt install neofetch
 sudo snap install lolcat
+sudo apt-get install figlet
