@@ -92,10 +92,11 @@ source $ZSH/oh-my-zsh.sh
 ####################################################################
 #  Add cuda tools to command path                                  #
 ####################################################################
-export PATH=/usr/local/cuda-11.0/bin${PATH:+:${PATH}}
-export LD_LIBRARY_PATH=/usr/local/cuda-11.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+export PATH=/usr/local/cuda-11.2/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-11.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 export LD_LIBRARY_PATH=${LD_LIBRARY_PATH:+${LD_LIBRARY_PATH}:}/usr/local/cuda/extras/CUPTI/lib64
-export CUDA_HOME=/usr/local/cuda-11.0
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/kevin/.mujoco/mujoco200/bin
+export CUDA_HOME=/usr/local/cuda-11.2
 
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 PROMPT='　%{$fg_bold[magenta]%}HOMEPC%{$reset_color%} %{$fg_bold[cyan]%}%T%{$reset_color%} $(spaceship_prompt)'
