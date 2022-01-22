@@ -144,6 +144,8 @@ alias sshpc='ssh kevin@104.32.171.230 -p 6666 -XY'
 alias sftppc='sftp -P 6666 kevin@104.32.171.230'
 alias sshlab='ssh kcchang@leonardo.usc.edu -XY'
 alias sftplab='sftp kcchang@leonardo.usc.edu'
+alias sshvlsi='ssh kchang94@viterbi-scf1.usc.edu'
+alias sftpvlsi='sftp kchang94@viterbi-scf1.usc.edu'
 function sshYlab {
   ssh b04901136@eda.ee.ntu.edu.tw -p ${1:-50032} -X
 }

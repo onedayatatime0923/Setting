@@ -95,7 +95,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH=/usr/local/cuda-11.2/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/cuda-11.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 export LD_LIBRARY_PATH=${LD_LIBRARY_PATH:+${LD_LIBRARY_PATH}:}/usr/local/cuda/extras/CUPTI/lib64
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/kevin/.mujoco/mujoco200/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/kevin/.mujoco/mjpro150/bin
 export CUDA_HOME=/usr/local/cuda-11.2
 
 SPACESHIP_PROMPT_ADD_NEWLINE=false
@@ -110,6 +110,7 @@ export PATH="$HOME/gems/bin:$PATH"
 #  Add local path                                                  #
 ####################################################################
 export PATH="$HOME/.local/bin/:$PATH"
+export PATH="$HOME/.local/slugs/src/:$PATH"
 ####################################################################
 
 # You may need to manually set your language environment
@@ -145,6 +146,8 @@ alias sshpc='ssh kevin@104.32.171.230 -p 6666 -XY'
 alias sftppc='sftp -P 6666 kevin@104.32.171.230'
 alias sshlab='ssh kcchang@leonardo.usc.edu -XY'
 alias sftplab='sftp kcchang@leonardo.usc.edu'
+alias sshvlsi='ssh kchang94@viterbi-scf1.usc.edu'
+alias sftpvlsi='sftp kchang94@viterbi-scf1.usc.edu'
 function sshYlab {
   ssh b04901136@eda.ee.ntu.edu.tw -p ${1:-50032} -X
 }
