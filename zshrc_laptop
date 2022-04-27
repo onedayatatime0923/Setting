@@ -92,10 +92,11 @@ source $ZSH/oh-my-zsh.sh
 ####################################################################
 #  Add cuda tools to command path                                  #
 ####################################################################
-export PATH=/usr/local/cuda-11.0/bin${PATH:+:${PATH}}
-export LD_LIBRARY_PATH=/usr/local/cuda-11.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+export PATH=/usr/local/cuda-11.2/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-11.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 export LD_LIBRARY_PATH=${LD_LIBRARY_PATH:+${LD_LIBRARY_PATH}:}/usr/local/cuda/extras/CUPTI/lib64
-export CUDA_HOME=/usr/local/cuda-11.0
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/kevin/.mujoco/mjpro150/bin
+export CUDA_HOME=/usr/local/cuda-11.2
 
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 PROMPT='　%{$fg_bold[magenta]%}LAPTOP%{$reset_color%} %{$fg_bold[cyan]%}%T%{$reset_color%} $(spaceship_prompt)'
@@ -145,6 +146,9 @@ alias sftppc='sftp -P 6666 kevin@104.32.171.230'
 alias sshlab='ssh kcchang@leonardo.usc.edu -XY'
 alias sftplab='sftp kcchang@leonardo.usc.edu'
 alias sshvlsi='ssh kchang94@viterbi-scf1.usc.edu'
+function sshfvlsi {
+  ssh -L 6666:localhost:${1:-15008} -N -f -l kchang94 viterbi-scf1.usc.edu
+}
 alias sftpvlsi='sftp kchang94@viterbi-scf1.usc.edu'
 function sshYlab {
   ssh b04901136@eda.ee.ntu.edu.tw -p ${1:-50032} -X
