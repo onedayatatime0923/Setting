@@ -92,29 +92,20 @@ source $ZSH/oh-my-zsh.sh
 ####################################################################
 #  Add cuda tools to command path                                  #
 ####################################################################
-export PATH=/usr/local/cuda-11.2/bin${PATH:+:${PATH}}
-export LD_LIBRARY_PATH=/usr/local/cuda-11.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
-export LD_LIBRARY_PATH=${LD_LIBRARY_PATH:+${LD_LIBRARY_PATH}:}/usr/local/cuda/extras/CUPTI/lib64
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/kevin/.mujoco/mjpro150/bin
+export GUROBI_HOME="/opt/gurobi912/linux64"
+
+export PATH="/usr/local/cuda-11.2/bin${PATH:+:${PATH}}"
+export PATH="${HOME}/.local/bin/${PATH:+:${PATH}}"
+export PATH="${HOME}/.local/slugs/src/${PATH:+:${PATH}}"
+export PATH="${GUROBI_HOME}/bin${PATH:+:${PATH}}"
+export LD_LIBRARY_PATH="/usr/local/cuda-11.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
+export LD_LIBRARY_PATH="/usr/local/cuda/extras/CUPTI/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
+export LD_LIBRARY_PATH="${HOME}/.mujoco/mjpro150/bin${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
+export LD_LIBRARY_PATH="${GUROBI_HOME}/lib${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
 export CUDA_HOME=/usr/local/cuda-11.2
 
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 PROMPT='　%{$fg_bold[magenta]%}LAPTOP%{$reset_color%} %{$fg_bold[cyan]%}%T%{$reset_color%} $(spaceship_prompt)'
-####################################################################
-#  Install Gurobi                                                  #
-####################################################################
-export GUROBI_HOME="/opt/gurobi912/linux64"
-export PATH="${PATH}:${GUROBI_HOME}/bin"
-export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"
-####################################################################
-#  Install Ruby Gems to ~/gems                                     #
-####################################################################
-export GEM_HOME="$HOME/gems"
-export PATH="$HOME/gems/bin:$PATH"
-####################################################################
-#  Add local path                                                  #
-####################################################################
-export PATH="$HOME/.local/bin/:$PATH"
 ####################################################################
 
 # You may need to manually set your language environment
