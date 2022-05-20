@@ -99,7 +99,12 @@ export CUDA_HOME=/usr/local/cuda-11.0
 
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 PROMPT='　%{$fg_bold[magenta]%}LAPTOP%{$reset_color%} %{$fg_bold[cyan]%}%T%{$reset_color%} $(spaceship_prompt)'
-
+####################################################################
+#  Install Gurobi                                                  #
+####################################################################
+export GUROBI_HOME="/opt/gurobi912/linux64"
+export PATH="${PATH}:${GUROBI_HOME}/bin"
+export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"
 ####################################################################
 #  Install Ruby Gems to ~/gems                                     #
 ####################################################################
@@ -145,6 +150,9 @@ alias sftppc='sftp -P 6666 kevin@104.32.171.230'
 alias sshlab='ssh kcchang@leonardo.usc.edu -XY'
 alias sftplab='sftp kcchang@leonardo.usc.edu'
 alias sshvlsi='ssh kchang94@viterbi-scf1.usc.edu'
+function sshfvlsi {
+  ssh -L 6666:localhost:${1:-15008} -N -f -l kchang94 viterbi-scf1.usc.edu
+}
 alias sftpvlsi='sftp kchang94@viterbi-scf1.usc.edu'
 function sshYlab {
   ssh b04901136@eda.ee.ntu.edu.tw -p ${1:-50032} -X
