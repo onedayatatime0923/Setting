@@ -26,6 +26,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'godlygeek/tabular'
 Plugin 'majutsushi/tagbar'
+Plugin 'sirver/ultisnips'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'octol/vim-cpp-enhanced-highlight'
@@ -37,6 +38,7 @@ Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'tpope/vim-repeat'
+Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-surround'
 Plugin 'lervag/vimtex'
 Plugin 'christoomey/vim-tmux-navigator'
@@ -332,6 +334,24 @@ let g:syntastic_check_on_wq = 0
 """"""""""""""""""""""""""""""""""""""""""
 nmap <F12> :TagbarToggle<CR>
 let g:tagbar_width=30
+""""""""""""""""""""""""""""""""""""""""""
+" ultisnips                              "
+""""""""""""""""""""""""""""""""""""""""""
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+let g:UltiSnipsExpandTrigger="<nop>"
+let g:ulti_expand_or_jump_res = 0
+function! <SID>ExpandSnippetOrReturn()
+  let snippet = UltiSnips#ExpandSnippetOrJump()
+  if g:ulti_expand_or_jump_res > 0
+    return snippet
+  else
+    return "\<CR>"
+  endif
+endfunction
+inoremap <expr> <CR> pumvisible() ? "<C-R>=<SID>ExpandSnippetOrReturn()<CR>" : "\<CR>"
 """"""""""""""""""""""""""""""""""""""""""
 " Airline                                "
 """"""""""""""""""""""""""""""""""""""""""
