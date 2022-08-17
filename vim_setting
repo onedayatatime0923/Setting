@@ -258,12 +258,6 @@ function! NumberToggle()
 endfunc
 nnoremap <F3> :call NumberToggle()<cr>
 """"""""""""""""""""""""""""""""""""""""""
-" Macro                                  "
-""""""""""""""""""""""""""""""""""""""""""
-let @i = 'o\begin{itemize}\item \end{itemize}k'
-let @e = 'o\begin{enumerate}\item \end{enumerate}k'
-let @a = 'a\begin{array}{cc} & \end{array}5b'
-""""""""""""""""""""""""""""""""""""""""""
 " Nerdcommenter                          "
 """"""""""""""""""""""""""""""""""""""""""
 " Add spaces after comment delimiters by default
