@@ -76,7 +76,6 @@ plugins=(
   extract
   z
   virtualenvwrapper
-  zsh-autosuggestions
   zsh-syntax-highlighting
 )
 ####################################################################
