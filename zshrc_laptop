@@ -110,10 +110,10 @@ SPACESHIP_PROMPT_SEPARATE_LINE=false
 SPACESHIP_PROMPT_FIRST_PREFIX_SHOW=true
 # Display time
 SPACESHIP_TIME_SHOW=true
-SPACESHIP_TIME_PREFIX="　%{$fg_bold[magenta]%}LAPTOP%{$reset_color%} "
+SPACESHIP_TIME_PREFIX="　"
+SPACESHIP_TIME_COLOR=magenta
 # Display username
 SPACESHIP_USER_SHOW=always
-SPACESHIP_USER_COLOR=blue
 # Display directory
 SPACESHIP_DIR_TRUNC_REPO=false
 # Display async
