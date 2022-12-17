@@ -106,7 +106,18 @@ export LD_LIBRARY_PATH="${GUROBI_HOME}/lib${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}
 export CUDA_HOME=/usr/local/cuda-11.7
 
 SPACESHIP_PROMPT_ADD_NEWLINE=false
-PROMPT='　%{$fg_bold[magenta]%}LAPTOP%{$reset_color%} %{$fg_bold[cyan]%}%T%{$reset_color%} $(spaceship_prompt)'
+SPACESHIP_PROMPT_SEPARATE_LINE=false
+SPACESHIP_PROMPT_FIRST_PREFIX_SHOW=true
+# Display time
+SPACESHIP_TIME_SHOW=true
+SPACESHIP_TIME_PREFIX="　%{$fg_bold[magenta]%}LAPTOP%{$reset_color%} "
+# Display username
+SPACESHIP_USER_SHOW=always
+SPACESHIP_USER_COLOR=blue
+# Display directory
+SPACESHIP_DIR_TRUNC_REPO=false
+# Display async
+SPACESHIP_ASYNC_SHOW=false
 ####################################################################
 
 # You may need to manually set your language environment
