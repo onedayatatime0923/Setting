@@ -93,8 +93,9 @@ source $ZSH/oh-my-zsh.sh
 #  Add cuda tools to command path                                  #
 ####################################################################
 export GUROBI_HOME="/opt/gurobi951/linux64"
+export Z3_HOME="${HOME}/.local/lib/python3.8/site-packages/z3"
 
-export PATH="/usr/local/cuda-11.2/bin${PATH:+:${PATH}}"
+export PATH="/usr/local/cuda-11.7/bin${PATH:+:${PATH}}"
 export PATH="${HOME}/.local/bin/${PATH:+:${PATH}}"
 export PATH="${HOME}/.local/slugs/src/${PATH:+:${PATH}}"
 export PATH="${GUROBI_HOME}/bin${PATH:+:${PATH}}"
@@ -102,7 +103,7 @@ export LD_LIBRARY_PATH="/usr/local/cuda-11.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRA
 export LD_LIBRARY_PATH="/usr/local/cuda/extras/CUPTI/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
 export LD_LIBRARY_PATH="${HOME}/.mujoco/mjpro150/bin${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
 export LD_LIBRARY_PATH="${GUROBI_HOME}/lib${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
-export CUDA_HOME=/usr/local/cuda-11.2
+export CUDA_HOME=/usr/local/cuda-11.7
 
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 PROMPT='　%{$fg_bold[magenta]%}LAPTOP%{$reset_color%} %{$fg_bold[cyan]%}%T%{$reset_color%} $(spaceship_prompt)'
