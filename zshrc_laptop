@@ -92,8 +92,8 @@ source $ZSH/oh-my-zsh.sh
 ####################################################################
 #  Add cuda tools to command path                                  #
 ####################################################################
-export GUROBI_HOME="/opt/gurobi951/linux64"
-export Z3_HOME="${HOME}/.local/lib/python3.8/site-packages/z3"
+export GUROBI_HOME="/opt/gurobi1000/linux64"
+export Z3_HOME="${HOME}/.local/lib/python3.10/site-packages/z3"
 
 export PATH="/usr/local/cuda-11.7/bin${PATH:+:${PATH}}"
 export PATH="${HOME}/.local/bin/${PATH:+:${PATH}}"
