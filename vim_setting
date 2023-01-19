@@ -360,8 +360,6 @@ let g:airline_theme='molokai'
 """"""""""""""""""""""""""""""""""""""""""
 " Airline tabline                        "
 """"""""""""""""""""""""""""""""""""""""""
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_splits = 0
 """"""""""""""""""""""""""""""""""""""""""
 " Cpp syntax                             "
 """"""""""""""""""""""""""""""""""""""""""
