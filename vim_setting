@@ -256,3 +256,157 @@ function! NumberToggle()
   endif
 endfunc
 nnoremap <F3> :call NumberToggle()<cr>
+""""""""""""""""""""""""""""""""""""""""""
+" Nerdcommenter                          "
+""""""""""""""""""""""""""""""""""""""""""
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+" Align line-wise comment delimiters flush left instead of following code
+" indentation
+let g:NERDDefaultAlign = 'left'
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+" Allow commenting and inverting empty lines (useful when commenting a
+" region)
+let g:NERDCommentEmptyLines = 1
+" Enable trimming of trailing whitespace when uncommenting
+ let g:NERDTrimTrailingWhitespace = 1
+" Enable NERDCommenterToggle to check all selected lines is commented or not 
+let g:NERDToggleCheckAllLines = 1
+map <C-_> <leader>c<space>
+""""""""""""""""""""""""""""""""""""""""""
+" Nerdtree                               "
+""""""""""""""""""""""""""""""""""""""""""
+autocmd vimenter * silent NERDTree Home| wincmd p 
+autocmd FileType nerdtree setlocal nocursorcolumn nocursorline
+map <C-t> : silent call ToggleNerdTree()<CR>
+function ToggleNerdTree()
+  NERDTreeTabsToggle
+  wincmd W
+  NERDTreeTabsFind
+  echo "Toggle Nerd Tree.(NERDTreeTabsToggle, NERDTreeTabsFind)"
+endfunction
+nnoremap <silent> <C-d> :NERDTreeTabsFind <CR>
+let NERDTreeShowBookmarks=1
+let g:NERDTreeWinSize=20
+let g:nerdtree_tabs_open_on_console_startup=1
+let g:nerdtree_tabs_autofind=1
+""""""""""""""""""""""""""""""""""""""""""
+" Nerdtree Directory Highlighting        "
+""""""""""""""""""""""""""""""""""""""""""
+hi Directory cterm=bold ctermfg=Magenta
+""""""""""""""""""""""""""""""""""""""""""
+" NERDTree File Highlighting             "
+""""""""""""""""""""""""""""""""""""""""""
+let g:NERDTreeHighlightFolders = 1 " enables folder icon highlighting using exact match
+let g:NERDTreeHighlightFoldersFullName = 1 " highlights the folder name
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
+""""""""""""""""""""""""""""""""""""""""""
+" Syntastic                              "
+""""""""""""""""""""""""""""""""""""""""""
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_cpp_checkers=[]
+let g:syntastic_python_checkers=['pyflakes']
+let g:syntastic_python_pyflakes_exec ='pyflakes3'
+let g:syntastic_tex_checkers=[]
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_loc_list_height= 2
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+""""""""""""""""""""""""""""""""""""""""""
+" Tagbar                                 "
+""""""""""""""""""""""""""""""""""""""""""
+nmap <F12> :TagbarToggle<CR>
+let g:tagbar_width=30
+""""""""""""""""""""""""""""""""""""""""""
+" ultisnips                              "
+""""""""""""""""""""""""""""""""""""""""""
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+let g:UltiSnipsExpandTrigger="<nop>"
+let g:ulti_expand_or_jump_res = 0
+function! <SID>ExpandSnippetOrReturn()
+  let snippet = UltiSnips#ExpandSnippetOrJump()
+  if g:ulti_expand_or_jump_res > 0
+    return snippet
+  else
+    return "\<CR>"
+  endif
+endfunction
+inoremap <expr> <CR> pumvisible() ? "<C-R>=<SID>ExpandSnippetOrReturn()<CR>" : "\<CR>"
+""""""""""""""""""""""""""""""""""""""""""
+" Airline                                "
+""""""""""""""""""""""""""""""""""""""""""
+set laststatus=2
+let g:airline_powerline_fonts = 1
+let g:airline_theme='molokai'
+""""""""""""""""""""""""""""""""""""""""""
+" Airline tabline                        "
+""""""""""""""""""""""""""""""""""""""""""
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_splits = 0
+""""""""""""""""""""""""""""""""""""""""""
+" Cpp syntax                             "
+""""""""""""""""""""""""""""""""""""""""""
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_experimental_template_highlight = 1
+let g:cpp_experimental_template_highlight = 1
+""""""""""""""""""""""""""""""""""""""""""
+" Easymotion                             "
+""""""""""""""""""""""""""""""""""""""""""
+map <C-u> <Plug>(easymotion-bd-w)
+" nmap <C-u> <Plug>(easymotion-overwin-w)
+" map  f <Plug>(easymotion-bd-f)
+" nmap f <Plug>(easymotion-overwin-f)
+" nmap s <Plug>(easymotion-overwin-f2)
+" map <Leader>L <Plug>(easymotion-bd-jk)
+" nmap <Leader>L <Plug>(easymotion-overwin-line)
+""""""""""""""""""""""""""""""""""""""""""
+" Fugitive                               "
+""""""""""""""""""""""""""""""""""""""""""
+set diffopt+=vertical
+""""""""""""""""""""""""""""""""""""""""""
+" Gutentags                              "
+""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>f <C-]>
+nnoremap <leader>t <C-t>
+""""""""""""""""""""""""""""""""""""""""""
+" Vimtex                                 "
+""""""""""""""""""""""""""""""""""""""""""
+let g:vimtex_view_method = 'zathura'
+let g:tex_flavor = 'latex'
+""""""""""""""""""""""""""""""""""""""""""
+" Vim visual multi                       "
+""""""""""""""""""""""""""""""""""""""""""
+let g:VM_maps = {}
+let g:VM_maps['Find Under']                 = ''
+let g:VM_maps["Add Cursor At Pos"]          = '<C-c>'
+let g:VM_maps["Add Cursor Down"]            = '<F7>'
+let g:VM_maps["Add Cursor Up"]              = '<F8>'
+""""""""""""""""""""""""""""""""""""""""""
+" YCM                                    "
+""""""""""""""""""""""""""""""""""""""""""
+set completeopt-=preview
+let g:ycm_show_diagnostics_ui = 0
+let g:ycm_enable_diagnostic_signs = 0
+let g:ycm_enable_diagnostic_highlighting = 0
+let g:ycm_echo_current_diagnostic = 0
+let g:ycm_auto_hover=''
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/youcompleteme/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+""""""""""""""""""""""""""""""""""""""""""
+" Ctrl p                                 "
+""""""""""""""""""""""""""""""""""""""""""
+let g:ctrlp_map = 't'
