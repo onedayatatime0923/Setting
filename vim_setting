@@ -10,59 +10,53 @@ syntax enable
 """"""""""""""""""""""""""""""""""""""""""
 "set vundle                              "
 """"""""""""""""""""""""""""""""""""""""""
-filetype off                  " required
+call plug#begin()
+" The default plugin directory will be as follows:
+"   - Vim (Linux/macOS): '~/.vim/plugged'
+"   - Vim (Windows): '~/vimfiles/plugged'
+"   - Neovim (Linux/macOS/Windows): stdpath('data') . '/plugged'
+" You can specify a custom plugin directory by passing it as the argument
+"   - e.g. `call plug#begin('~/.vim/plugged')`
+"   - Avoid using standard Vim directory names like 'plugin'
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" Make sure you use single quotes
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tomasr/molokai'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'godlygeek/tabular'
-Plugin 'majutsushi/tagbar'
-Plugin 'sirver/ultisnips'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'ryanoasis/vim-devicons'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'ludovicchabant/vim-gutentags'
-Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'tpope/vim-repeat'
-Plugin 'honza/vim-snippets'
-Plugin 'tpope/vim-surround'
-Plugin 'lervag/vimtex'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'mg979/vim-visual-multi', {'branch': 'master'}
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'rhysd/conflict-marker.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'matchit.zip'
+Plug 'tomasr/molokai'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'vim-syntastic/syntastic'
+Plug 'godlygeek/tabular'
+Plug 'majutsushi/tagbar'
+Plug 'sirver/ultisnips'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'ryanoasis/vim-devicons'
+Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'adelarsq/vim-matchit'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'tpope/vim-repeat'
+Plug 'honza/vim-snippets'
+Plug 'tpope/vim-surround'
+Plug 'lervag/vimtex'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'tpope/vim-unimpaired'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'Valloric/YouCompleteMe'
+Plug 'rhysd/conflict-marker.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+
+" Initialize plugin system
+" - Automatically executes `filetype plugin indent on` and `syntax enable`.
+call plug#end()
+" You can revert the settings after the call like so:
+"   filetype indent off   " Disable file-type-specific indentation
+"   syntax off            " Disable syntax highlighting
 
 """"""""""""""""""""""""""""""""""""""""""
 "set color                               "
@@ -262,155 +256,3 @@ function! NumberToggle()
   endif
 endfunc
 nnoremap <F3> :call NumberToggle()<cr>
-""""""""""""""""""""""""""""""""""""""""""
-" Nerdcommenter                          "
-""""""""""""""""""""""""""""""""""""""""""
-" Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 1
-" Use compact syntax for prettified multi-line comments
-let g:NERDCompactSexyComs = 1
-" Align line-wise comment delimiters flush left instead of following code
-" indentation
-let g:NERDDefaultAlign = 'left'
-" Set a language to use its alternate delimiters by default
-let g:NERDAltDelims_java = 1
-" Add your own custom formats or override the defaults
-let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
-" Allow commenting and inverting empty lines (useful when commenting a
-" region)
-let g:NERDCommentEmptyLines = 1
-" Enable trimming of trailing whitespace when uncommenting
- let g:NERDTrimTrailingWhitespace = 1
-" Enable NERDCommenterToggle to check all selected lines is commented or not 
-let g:NERDToggleCheckAllLines = 1
-map <C-_> <leader>c<space>
-""""""""""""""""""""""""""""""""""""""""""
-" Nerdtree                               "
-""""""""""""""""""""""""""""""""""""""""""
-autocmd vimenter * silent NERDTree Home| wincmd p 
-autocmd FileType nerdtree setlocal nocursorcolumn nocursorline
-map <C-t> : silent call ToggleNerdTree()<CR>
-function ToggleNerdTree()
-  NERDTreeTabsToggle
-  wincmd W
-  NERDTreeTabsFind
-  echo "Toggle Nerd Tree.(NERDTreeTabsToggle, NERDTreeTabsFind)"
-endfunction
-nnoremap <silent> <C-d> :NERDTreeTabsFind <CR>
-let NERDTreeShowBookmarks=1
-let g:NERDTreeWinSize=20
-let g:nerdtree_tabs_open_on_console_startup=1
-let g:nerdtree_tabs_autofind=1
-""""""""""""""""""""""""""""""""""""""""""
-" Nerdtree Directory Highlighting        "
-""""""""""""""""""""""""""""""""""""""""""
-hi Directory cterm=bold ctermfg=Magenta
-""""""""""""""""""""""""""""""""""""""""""
-" NERDTree File Highlighting             "
-""""""""""""""""""""""""""""""""""""""""""
-let g:NERDTreeHighlightFolders = 1 " enables folder icon highlighting using exact match
-let g:NERDTreeHighlightFoldersFullName = 1 " highlights the folder name
-let g:NERDTreeFileExtensionHighlightFullName = 1
-let g:NERDTreeExactMatchHighlightFullName = 1
-let g:NERDTreePatternMatchHighlightFullName = 1
-""""""""""""""""""""""""""""""""""""""""""
-" Syntastic                              "
-""""""""""""""""""""""""""""""""""""""""""
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_cpp_checkers=[]
-let g:syntastic_python_checkers=['pyflakes']
-let g:syntastic_python_pyflakes_exec ='pyflakes3'
-let g:syntastic_tex_checkers=[]
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_loc_list_height= 2
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-""""""""""""""""""""""""""""""""""""""""""
-" Tagbar                                 "
-""""""""""""""""""""""""""""""""""""""""""
-nmap <F12> :TagbarToggle<CR>
-let g:tagbar_width=30
-""""""""""""""""""""""""""""""""""""""""""
-" ultisnips                              "
-""""""""""""""""""""""""""""""""""""""""""
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-let g:UltiSnipsExpandTrigger="<nop>"
-let g:ulti_expand_or_jump_res = 0
-function! <SID>ExpandSnippetOrReturn()
-  let snippet = UltiSnips#ExpandSnippetOrJump()
-  if g:ulti_expand_or_jump_res > 0
-    return snippet
-  else
-    return "\<CR>"
-  endif
-endfunction
-inoremap <expr> <CR> pumvisible() ? "<C-R>=<SID>ExpandSnippetOrReturn()<CR>" : "\<CR>"
-""""""""""""""""""""""""""""""""""""""""""
-" Airline                                "
-""""""""""""""""""""""""""""""""""""""""""
-set laststatus=2
-let g:airline_powerline_fonts = 1
-let g:airline_theme='molokai'
-""""""""""""""""""""""""""""""""""""""""""
-" Airline tabline                        "
-""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""
-" Cpp syntax                             "
-""""""""""""""""""""""""""""""""""""""""""
-let g:cpp_class_scope_highlight = 1
-let g:cpp_member_variable_highlight = 1
-let g:cpp_class_decl_highlight = 1
-let g:cpp_experimental_template_highlight = 1
-let g:cpp_experimental_template_highlight = 1
-""""""""""""""""""""""""""""""""""""""""""
-" Easymotion                             "
-""""""""""""""""""""""""""""""""""""""""""
-map  <C-u> <Plug>(easymotion-bd-w)
-" nmap <C-u> <Plug>(easymotion-overwin-w)
-" map  f <Plug>(easymotion-bd-f)
-" nmap f <Plug>(easymotion-overwin-f)
-" nmap s <Plug>(easymotion-overwin-f2)
-" map <Leader>L <Plug>(easymotion-bd-jk)
-" nmap <Leader>L <Plug>(easymotion-overwin-line)
-""""""""""""""""""""""""""""""""""""""""""
-" Fugitive                               "
-""""""""""""""""""""""""""""""""""""""""""
-set diffopt+=vertical
-""""""""""""""""""""""""""""""""""""""""""
-" Gutentags                              "
-""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>f <C-]>
-nnoremap <leader>t <C-t>
-""""""""""""""""""""""""""""""""""""""""""
-" Vimtex                                 "
-""""""""""""""""""""""""""""""""""""""""""
-let g:vimtex_view_method = 'zathura'
-let g:tex_flavor = 'latex'
-""""""""""""""""""""""""""""""""""""""""""
-" Vim visual multi                       "
-""""""""""""""""""""""""""""""""""""""""""
-let g:VM_maps = {}
-let g:VM_maps['Find Under']                 = ''
-let g:VM_maps["Add Cursor At Pos"]          = '<C-c>'
-let g:VM_maps["Add Cursor Down"]            = '<F7>'
-let g:VM_maps["Add Cursor Up"]              = '<F8>'
-""""""""""""""""""""""""""""""""""""""""""
-" YCM                                    "
-""""""""""""""""""""""""""""""""""""""""""
-set completeopt-=preview
-let g:ycm_show_diagnostics_ui = 0
-let g:ycm_enable_diagnostic_signs = 0
-let g:ycm_enable_diagnostic_highlighting = 0
-let g:ycm_echo_current_diagnostic = 0
-let g:ycm_auto_hover=''
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/youcompleteme/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-""""""""""""""""""""""""""""""""""""""""""
-" Ctrl p                                 "
-""""""""""""""""""""""""""""""""""""""""""
-let g:ctrlp_map = 't'
