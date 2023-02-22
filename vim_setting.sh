@@ -1,6 +1,7 @@
 
 # install necessity
 sudo apt-get install vim vim-gtk curl
+mkdir -p ~/.vim/plugged
 mkdir -p ~/.vim/undodir
 # install plug.vim
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
