@@ -28,6 +28,7 @@ Plug 'vim-syntastic/syntastic'
 Plug 'godlygeek/tabular'
 Plug 'majutsushi/tagbar'
 Plug 'sirver/ultisnips'
+Plug 'mbbill/undotree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'octol/vim-cpp-enhanced-highlight'
@@ -198,9 +199,9 @@ set splitright
 """"""""""""""""""""""""""""""""""""""""""
 nnoremap <C-n> gt
 nnoremap <C-p> gT
+noremap <F4> : call CloseTab()<cr>
 noremap <F5> :-tabmove<cr>
 noremap <F6> :+tabmove<cr>
-noremap <F9> : call CloseTab()<cr>
 function CloseTab()
 	if (tabpagenr("$") == 1)
     qa
@@ -412,3 +413,7 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/youcompleteme/third_party/ycmd/
 " Ctrl p                                 "
 """"""""""""""""""""""""""""""""""""""""""
 let g:ctrlp_map = 't'
+""""""""""""""""""""""""""""""""""""""""""
+" undotree                               "
+""""""""""""""""""""""""""""""""""""""""""
+nnoremap <F9> :UndotreeToggle<CR>
