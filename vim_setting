@@ -21,6 +21,7 @@ call plug#begin()
 
 " Make sure you use single quotes
 
+Plug 'Yggdroot/indentLine'
 Plug 'tomasr/molokai'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
