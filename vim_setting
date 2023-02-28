@@ -371,7 +371,8 @@ let g:cpp_experimental_template_highlight = 1
 """"""""""""""""""""""""""""""""""""""""""
 " Easymotion                             "
 """"""""""""""""""""""""""""""""""""""""""
-map <C-u> <Plug>(easymotion-overwin-w)
+map <C-u> <Plug>(easymotion-bd-w)
+nmap <C-u> <Plug>(easymotion-overwin-w)
 " map  f <Plug>(easymotion-bd-f)
 " nmap f <Plug>(easymotion-overwin-f)
 " nmap s <Plug>(easymotion-overwin-f2)
