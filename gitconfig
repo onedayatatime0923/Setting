@@ -1,25 +1,27 @@
-[user]
-	email = onedayatatime0923@gmail.com
-	name = kevin
-[color]
-	ui = true
 [alias]
 	st = status
 	br = branch
 	ch = checkout
 [apply]
 	whitespace = nowarn
-[push]
-	default = matching
-[http]
-	postBuffer = 524288000
+[color]
+	ui = true
 [core]
 	editor = vim
+[credential "https://git.overleaf.com"]
+    username = onedayatatime0923@gmail.com
+    helper = store
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
-[credential "https://git.overleaf.com"]
-    username = onedayatatime0923@gmail.com
-    helper = store
+[http]
+	postBuffer = 524288000
+[pull]
+	rebase = true
+[push]
+	default = matching
+[user]
+	email = onedayatatime0923@gmail.com
+	name = kevin
