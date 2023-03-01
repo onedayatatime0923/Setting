@@ -21,6 +21,7 @@ call plug#begin()
 
 " Make sure you use single quotes
 
+Plug 'Yggdroot/indentLine'
 Plug 'tomasr/molokai'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
@@ -28,6 +29,7 @@ Plug 'vim-syntastic/syntastic'
 Plug 'godlygeek/tabular'
 Plug 'majutsushi/tagbar'
 Plug 'sirver/ultisnips'
+Plug 'mbbill/undotree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'octol/vim-cpp-enhanced-highlight'
@@ -198,9 +200,9 @@ set splitright
 """"""""""""""""""""""""""""""""""""""""""
 nnoremap <C-n> gt
 nnoremap <C-p> gT
+noremap <F4> : call CloseTab()<cr>
 noremap <F5> :-tabmove<cr>
 noremap <F6> :+tabmove<cr>
-noremap <F9> : call CloseTab()<cr>
 function CloseTab()
 	if (tabpagenr("$") == 1)
     qa
@@ -370,7 +372,7 @@ let g:cpp_experimental_template_highlight = 1
 " Easymotion                             "
 """"""""""""""""""""""""""""""""""""""""""
 map <C-u> <Plug>(easymotion-bd-w)
-" nmap <C-u> <Plug>(easymotion-overwin-w)
+nmap <C-u> <Plug>(easymotion-overwin-w)
 " map  f <Plug>(easymotion-bd-f)
 " nmap f <Plug>(easymotion-overwin-f)
 " nmap s <Plug>(easymotion-overwin-f2)
@@ -389,6 +391,7 @@ nnoremap <leader>t <C-t>
 " Vimtex                                 "
 """"""""""""""""""""""""""""""""""""""""""
 let g:vimtex_view_method = 'zathura'
+let g:vimtex_syntax_conceal_disable = 1
 let g:tex_flavor = 'latex'
 """"""""""""""""""""""""""""""""""""""""""
 " Vim visual multi                       "
@@ -412,3 +415,7 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/youcompleteme/third_party/ycmd/
 " Ctrl p                                 "
 """"""""""""""""""""""""""""""""""""""""""
 let g:ctrlp_map = 't'
+""""""""""""""""""""""""""""""""""""""""""
+" undotree                               "
+""""""""""""""""""""""""""""""""""""""""""
+nnoremap <F9> :UndotreeToggle<CR>
