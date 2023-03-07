@@ -24,7 +24,7 @@ call plug#begin()
 Plug 'Yggdroot/indentLine'
 Plug 'tomasr/molokai'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdtree'
 Plug 'vim-syntastic/syntastic'
 Plug 'godlygeek/tabular'
 Plug 'majutsushi/tagbar'
