@@ -151,6 +151,8 @@ alias sshpc='ssh kevin@75.54.112.51 -p 6666 -XY'
 alias sftppc='sftp -P 6666 kevin@75.54.112.51'
 alias sshlab='ssh kcchang@leonardo.usc.edu -XY'
 alias sftplab='sftp kcchang@leonardo.usc.edu'
+alias sshautolab='ssh kevin@10.136.200.8 -XY'
+alias sftpautolab='sftp kevin@10.136.200.8'
 alias sshvlsi='ssh kchang94@viterbi-scf1.usc.edu'
 function sshfvlsi {
   ssh -L 6666:localhost:${1:-15008} -N -f -l kchang94 viterbi-scf1.usc.edu
