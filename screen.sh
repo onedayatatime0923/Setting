@@ -15,7 +15,7 @@ then
     done
 else
     for display in $connected; do
-        xrandr --output $display --brightness 0.5
+        xrandr --output $display --brightness 0
     done
 fi
 echo $status
