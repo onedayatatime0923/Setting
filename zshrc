@@ -95,14 +95,14 @@ source $ZSH/oh-my-zsh.sh
 export GUROBI_HOME="/opt/gurobi1000/linux64"
 export Z3_HOME="${HOME}/.local/lib/python3.10/site-packages/z3"
 
-export PATH="/usr/local/cuda-11.7/bin${PATH:+:${PATH}}"
+export PATH="/usr/local/cuda/bin${PATH:+:${PATH}}"
 export PATH="${HOME}/.local/bin/${PATH:+:${PATH}}"
 export PATH="${GUROBI_HOME}/bin${PATH:+:${PATH}}"
-export LD_LIBRARY_PATH="/usr/local/cuda-11.7/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
+export LD_LIBRARY_PATH="/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
 export LD_LIBRARY_PATH="/usr/local/cuda/extras/CUPTI/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
 export LD_LIBRARY_PATH="${GUROBI_HOME}/lib${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
 export LD_LIBRARY_PATH="${HOME}/.local/lib/python3.10/site-packages/tensorrt${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
-export CUDA_HOME=/usr/local/cuda-11.7
+export CUDA_HOME=/usr/local/cuda
 
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_PROMPT_SEPARATE_LINE=false

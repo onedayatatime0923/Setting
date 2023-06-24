@@ -18,6 +18,3 @@ git submodule update --init --recursive
 ./install.py
 # install ctags
 sudo apt-get install exuberant-ctags
-# install font
-cd ~/.vim
-git clone https://github.com/artofrawr/powerline-fonts.git
