@@ -75,14 +75,8 @@ plugins=(
   tmux
   extract
   z
-  virtualenvwrapper
   zsh-syntax-highlighting
 )
-####################################################################
-# virtual env wrapper                                              #
-####################################################################
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/
 
 source $ZSH/oh-my-zsh.sh
 
