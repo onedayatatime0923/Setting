@@ -1,7 +1,7 @@
 # the gnome desktop entry to be updated
 key="org.gnome.desktop.a11y.magnifier mag-factor"
 
-step=0.2
+step=0.1
 maxValue=4.0
 
 currentValue=$(gsettings get $key)
