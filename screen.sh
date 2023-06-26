@@ -2,7 +2,7 @@ connected=$(xrandr | grep -w connected | cut -f1 -d' ')
 status='on'
 for display in $connected; do
     brightness=$(xrandr --verbose | grep -m 1 -w "$display connected" -A8 | grep "Brightness" | cut -f2 -d ' ')
-    echo $brightness
+    # echo $brightness
     if [ "$brightness" != '1.0' ]
     then
         status='off'
@@ -18,5 +18,4 @@ else
         xrandr --output $display --brightness 0
     done
 fi
-echo $status
-
+# echo $status
