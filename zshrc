@@ -179,5 +179,4 @@ bindkey "^N" down-line-or-beginning-search
 # colorful ascii plot                                              #
 ####################################################################
 archey --distribution darwin | lolcat -p 0.5
-figlet Kevin C. Chang -t | lolcat -p 0.5
-fortune | cowsay | lolcat -p 0.5
+fortune -n 80 -s | figlet -f smblock | lolcat -p 0.5
