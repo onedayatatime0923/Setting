@@ -180,3 +180,4 @@ bindkey "^N" down-line-or-beginning-search
 ####################################################################
 archey --distribution darwin | lolcat -p 0.5
 figlet Kevin C. Chang -t | lolcat -p 0.5
+fortune | cowsay | lolcat -p 0.5
