@@ -178,6 +178,5 @@ bindkey "^N" down-line-or-beginning-search
 ####################################################################
 # colorful ascii plot                                              #
 ####################################################################
-# screenfetch -A 'Mac OS X' -t | /usr/games/lolcat -p 0.5
-neofetch --ascii_distro mac --ascii_bold off --color_blocks off | lolcat -p 0.5
+archey --distribution darwin | lolcat -p 0.5
 figlet Kevin C. Chang -t | lolcat -p 0.5
