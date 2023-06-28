@@ -6,7 +6,7 @@ set -g default-terminal "screen-256color"
 set -g prefix C-a
 unbind C-b
 bind C-a send-prefix # binding Control+a for new prefix
-set-option -g prefix2 ` # setting second prefix
+set-option -g prefix2 C-space # setting second prefix
 bind ` send-prefix -2 # binding Control+a for new prefix
 
 #setting r for reload
