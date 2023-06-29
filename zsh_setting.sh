@@ -7,6 +7,5 @@ ln -s ~/.oh-my-zsh/custom/themes/spaceship-prompt/spaceship.zsh-theme ~/.oh-my-z
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
 # for prompt
-sudo apt install neofetch
-sudo snap install lolcat
-sudo apt-get install figlet
+pip3 install archey4
+sudo apt-get install lolcat
