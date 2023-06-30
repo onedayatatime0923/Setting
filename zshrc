@@ -171,7 +171,7 @@ alias sshRLab='ssh b04901136@140.112.175.122'
 alias sftpRLab='sftp b04901136@140.112.175.122'
 alias movie='mpv --cache-secs=600'
 
-alias tb='tensorboard --logdir '
+alias tb='tensorboard --logdir'
 
 bindkey "^P" up-line-or-beginning-search
 bindkey "^N" down-line-or-beginning-search
