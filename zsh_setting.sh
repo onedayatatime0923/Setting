@@ -7,5 +7,6 @@ ln -s ~/.oh-my-zsh/custom/themes/spaceship-prompt/spaceship.zsh-theme ~/.oh-my-z
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
 # for prompt
+sudo apt-get install python3-pip
 pip3 install archey4
 sudo apt-get install lolcat
