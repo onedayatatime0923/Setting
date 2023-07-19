@@ -1,4 +1,4 @@
-connected=$(xrandr | grep -w connected | cut -f1 -d' ')
+connected=$(xrandr | grep -w connected | grep -w DP | cut -f1 -d' ')
 status='on'
 for display in $connected; do
     brightness=$(xrandr --verbose | grep -m 1 -w "$display connected" -A8 | grep "Brightness" | cut -f2 -d ' ')
