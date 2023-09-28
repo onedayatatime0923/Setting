@@ -32,7 +32,9 @@ if handle is None:
             )
         except usb1.USBErrorIO: pass
         while True:
-            handle = _context.openByVendorIDAndProductID(vendor_id, device[2])
+            try:
+                handle = _context.openByVendorIDAndProductID(vendor_id, device[2])
+            except usb1.USBErrorAccess: pass
             if handle is not None:
                 break
 
