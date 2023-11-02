@@ -6,7 +6,6 @@ set encoding=utf8
 "let vim different from vi               "
 """"""""""""""""""""""""""""""""""""""""""
 set nocompatible  
-syntax enable
 """"""""""""""""""""""""""""""""""""""""""
 "set vundle                              "
 """"""""""""""""""""""""""""""""""""""""""
@@ -397,6 +396,7 @@ nnoremap <leader>t <C-t>
 """"""""""""""""""""""""""""""""""""""""""
 " Vimtex                                 "
 """"""""""""""""""""""""""""""""""""""""""
+let g:tex_flavor='latex'
 let g:vimtex_view_method = 'zathura'
 let g:vimtex_syntax_conceal_disable = 1
 let g:vimtex_compiler_method = 'latexmk'
