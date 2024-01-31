@@ -25,6 +25,7 @@ Plug 'tomasr/molokai'
 Plug 'scrooloose/nerdcommenter'
 Plug 'preservim/nerdtree'
 Plug 'vim-syntastic/syntastic'
+Plug 'ervandew/supertab'
 Plug 'majutsushi/tagbar'
 Plug 'sirver/ultisnips'
 Plug 'mbbill/undotree'
@@ -331,21 +332,6 @@ let g:tagbar_width=30
 """"""""""""""""""""""""""""""""""""""""""
 " ultisnips                              "
 """"""""""""""""""""""""""""""""""""""""""
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-let g:UltiSnipsExpandTrigger="<nop>"
-let g:ulti_expand_or_jump_res = 0
-function! <SID>ExpandSnippetOrReturn()
-  let snippet = UltiSnips#ExpandSnippetOrJump()
-  if g:ulti_expand_or_jump_res > 0
-    return snippet
-  else
-    return "\<CR>"
-  endif
-endfunction
-inoremap <expr> <CR> pumvisible() ? "<C-R>=<SID>ExpandSnippetOrReturn()<CR>" : "\<CR>"
 """"""""""""""""""""""""""""""""""""""""""
 " Airline                                "
 """"""""""""""""""""""""""""""""""""""""""
