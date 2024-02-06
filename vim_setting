@@ -337,8 +337,8 @@ let g:tagbar_width=30
 " ultisnips                              "
 """"""""""""""""""""""""""""""""""""""""""
 let g:UltiSnipsExpandTrigger = "<enter>"
-let g:UltiSnipsJumpForwardTrigger = "<s-f>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-b>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab
 """"""""""""""""""""""""""""""""""""""""""
 " Airline                                "
 """"""""""""""""""""""""""""""""""""""""""
