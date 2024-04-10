@@ -175,7 +175,3 @@ alias tb='tensorboard --logdir'
 
 bindkey "^P" up-line-or-beginning-search
 bindkey "^N" down-line-or-beginning-search
-####################################################################
-# colorful ascii plot                                              #
-####################################################################
-archey --distribution darwin | lolcat -p 0.5

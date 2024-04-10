@@ -1,6 +1,6 @@
 
 # install necessity
-sudo apt-get install vim vim-gtk curl
+sudo apt-get install vim vim-gtk3 curl
 mkdir -p ~/.vim/plugged
 mkdir -p ~/.vim/undodir
 # install plug.vim
