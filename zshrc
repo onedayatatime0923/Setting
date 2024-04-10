@@ -99,7 +99,7 @@ export LD_LIBRARY_PATH="${HOME}/.local/lib/python3.10/site-packages/tensorrt${LD
 export CUDA_HOME=/usr/local/cuda
 
 SPACESHIP_PROMPT_ADD_NEWLINE=false
-SPACESHIP_PROMPT_SEPARATE_LINE=false
+SPACESHIP_PROMPT_SEPARATE_LINE=true
 SPACESHIP_PROMPT_FIRST_PREFIX_SHOW=true
 # Display time
 SPACESHIP_TIME_SHOW=true
