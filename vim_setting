@@ -415,6 +415,10 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/youcompleteme/third_party/ycmd/
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 """"""""""""""""""""""""""""""""""""""""""
+" Ctrl p                                 "
+""""""""""""""""""""""""""""""""""""""""""
+let g:ctrlp_map = '<c-\>'
+""""""""""""""""""""""""""""""""""""""""""
 " undotree                               "
 """"""""""""""""""""""""""""""""""""""""""
 nnoremap <F9> :UndotreeToggle<CR>
