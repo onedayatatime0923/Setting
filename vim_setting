@@ -389,7 +389,12 @@ nnoremap <leader>t <C-t>
 """"""""""""""""""""""""""""""""""""""""""
 " Vimtex                                 "
 """"""""""""""""""""""""""""""""""""""""""
-let g:tex_flavor='latex'
+let g:tex_flavor='pdflatex'
+let g:vimtex_compiler_latexmk = {
+    \ 'options' : [
+    \   '-shell-escape',
+    \ ],
+    \}
 let g:vimtex_view_method = 'zathura'
 let g:vimtex_syntax_conceal_disable = 1
 let g:vimtex_compiler_method = 'latexmk'
