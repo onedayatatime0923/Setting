@@ -392,7 +392,11 @@ nnoremap <leader>t <C-t>
 let g:tex_flavor='pdflatex'
 let g:vimtex_compiler_latexmk = {
     \ 'options' : [
-    \   '-shell-escape',
+    \    '-shell-escape',
+    \    '-verbose',
+    \    '-file-line-error',
+    \    '-synctex=1',
+    \    '-interaction=nonstopmode',
     \ ],
     \}
 let g:vimtex_view_method = 'zathura'
