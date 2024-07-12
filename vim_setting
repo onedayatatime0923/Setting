@@ -144,8 +144,8 @@ vnoremap // y/\V<C-r>=escape(@",'/\')<CR><CR>
 """"""""""""""""""""""""""""""""""""""""""
 "Control c                               "
 """"""""""""""""""""""""""""""""""""""""""
-map <F4> : silent call SwitchFullSimpleMode()<CR>
-map! <F4> <Esc>:call SwitchFullSimpleMode()<CR>
+map <F2> : silent call SwitchFullSimpleMode()<CR>
+map! <F2> <Esc>:call SwitchFullSimpleMode()<CR>
 function SwitchFullSimpleMode()
 	if (&mouse == "a")
     NERDTreeTabsClose
@@ -258,6 +258,37 @@ function! NumberToggle()
   endif
 endfunc
 nnoremap <F3> :call NumberToggle()<cr>
+""""""""""""""""""""""""""""""""""""""""""
+"set for hightlighting f and t word      "
+""""""""""""""""""""""""""""""""""""""""""
+function! HighlightFSearches(cmd)
+    " Get extra character for the command.
+    let char = nr2char(getchar())
+
+    if char ==# ''
+        " Skip special keys: arrows, backspace...
+        return ''
+    endif
+
+    " Highlight 'char' on the current line.
+    let match_str = 'match Visual "\%' . line('.') . 'l' . char . '"'
+    execute match_str
+
+    " Finally, execute the original command with char appended to it
+    return a:cmd.char
+endfunction
+hi Visual cterm=reverse ctermbg=none ctermfg=none 
+" highlight searches using 'f'
+nnoremap <expr> f HighlightFSearches('f')
+nnoremap f<bs> <nop>
+vnoremap <expr> f HighlightFSearches('f')
+vnoremap f<bs> <nop>
+
+" highlight searches using 'F'
+nnoremap <expr> F HighlightFSearches('F')
+nnoremap F<bs> <nop>
+vnoremap <expr> F HighlightFSearches('F')
+vnoremap F<bs> <nop>
 """"""""""""""""""""""""""""""""""""""""""
 " Nerdcommenter                          "
 """"""""""""""""""""""""""""""""""""""""""
