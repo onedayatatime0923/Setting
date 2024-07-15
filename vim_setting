@@ -32,7 +32,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'ryanoasis/vim-devicons'
-Plug 'junegunn/vim-easy-align'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -336,6 +335,10 @@ let g:UltiSnipsExpandTrigger = "<enter>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 """"""""""""""""""""""""""""""""""""""""""
+" undotree                               "
+""""""""""""""""""""""""""""""""""""""""""
+nnoremap <F9> :UndotreeToggle<CR>
+""""""""""""""""""""""""""""""""""""""""""
 " Airline                                "
 """"""""""""""""""""""""""""""""""""""""""
 set laststatus=2
@@ -356,13 +359,6 @@ let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
 let g:cpp_experimental_template_highlight = 1
 let g:cpp_experimental_template_highlight = 1
-""""""""""""""""""""""""""""""""""""""""""
-" easy-align                             "
-""""""""""""""""""""""""""""""""""""""""""
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
 """"""""""""""""""""""""""""""""""""""""""
 " easymotion                             "
 """"""""""""""""""""""""""""""""""""""""""
@@ -417,10 +413,10 @@ let g:ycm_echo_current_diagnostic = 0
 let g:ycm_auto_hover=''
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/youcompleteme/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 """"""""""""""""""""""""""""""""""""""""""
+" clever f                               "
+""""""""""""""""""""""""""""""""""""""""""
+let g:clever_f_fix_key_direction = 1
+""""""""""""""""""""""""""""""""""""""""""
 " Ctrl p                                 "
 """"""""""""""""""""""""""""""""""""""""""
 let g:ctrlp_map = '<c-\>'
-""""""""""""""""""""""""""""""""""""""""""
-" undotree                               "
-""""""""""""""""""""""""""""""""""""""""""
-nnoremap <F9> :UndotreeToggle<CR>
