@@ -416,7 +416,6 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/youcompleteme/third_party/ycmd/
 " clever f                               "
 """"""""""""""""""""""""""""""""""""""""""
 let g:clever_f_fix_key_direction = 1
-let g:clever_f_repeat_last_char_inputs = 1
 """"""""""""""""""""""""""""""""""""""""""
 " Ctrl p                                 "
 """"""""""""""""""""""""""""""""""""""""""
