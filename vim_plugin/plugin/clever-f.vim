@@ -25,16 +25,28 @@ if ! exists('g:clever_f_not_overwrites_standard_mappings')
     omap T <Plug>(clever-f-T)
 endif
 
-map ; : call RepeatForward()<cr>
-function RepeatForward()
+nnoremap ; : call RepeatForwardNormal()<cr>
+function RepeatForwardNormal()
     execute clever_f#reset()
     execute "normal f\<cr>"
 endfunction
 
-map , : call RepeatBackward()<cr>
-function RepeatBackward()
+vnoremap ; : call RepeatForwardVisual()<cr>
+function RepeatForwardVisual()
+    execute clever_f#reset()
+    execute "normal gv f\<cr>"
+endfunction
+
+nnoremap , : call RepeatBackwardNormal()<cr>
+function RepeatBackwardNormal()
     execute clever_f#reset()
     execute "normal F\<cr>"
+endfunction
+
+vnoremap , : call RepeatBackwardVisual()<cr>
+function RepeatBackwardVisual()
+    execute clever_f#reset()
+    execute "normal gv 2F\<cr>"
 endfunction
 
 let g:loaded_clever_f = 1

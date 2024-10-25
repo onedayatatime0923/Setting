@@ -143,8 +143,8 @@ vnoremap // y/\V<C-r>=escape(@",'/\')<CR><CR>
 """"""""""""""""""""""""""""""""""""""""""
 "Control c                               "
 """"""""""""""""""""""""""""""""""""""""""
-map <F2> : silent call SwitchFullSimpleMode()<CR>
-map! <F2> <Esc>:call SwitchFullSimpleMode()<CR>
+noremap <F2> : silent call SwitchFullSimpleMode()<CR>
+noremap! <F2> <Esc>:call SwitchFullSimpleMode()<CR>
 function SwitchFullSimpleMode()
 	if (&mouse == "a")
     NERDTreeTabsClose
@@ -284,7 +284,7 @@ map <C-_> <leader>c<space>
 """"""""""""""""""""""""""""""""""""""""""
 autocmd vimenter * silent NERDTree Home| wincmd p 
 autocmd FileType nerdtree setlocal nocursorcolumn nocursorline
-map <C-t> : silent call ToggleNerdTree()<CR>
+noremap <C-t> : silent call ToggleNerdTree()<CR>
 function ToggleNerdTree()
   NERDTreeTabsToggle
   wincmd W
