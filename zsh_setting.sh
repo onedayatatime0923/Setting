@@ -8,5 +8,3 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/
 
 # for prompt
 sudo apt-get install python3-pip
-pip3 install archey4
-sudo apt-get install lolcat
