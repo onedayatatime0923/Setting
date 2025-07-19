@@ -38,7 +38,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'adelarsq/vim-matchit'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-repeat'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-surround'
@@ -141,26 +140,26 @@ set noeb
 """"""""""""""""""""""""""""""""""""""""""
 vnoremap // y/\V<C-r>=escape(@",'/\')<CR><CR>
 """"""""""""""""""""""""""""""""""""""""""
-"Control c                               "
+"F2                                      "
 """"""""""""""""""""""""""""""""""""""""""
 noremap <F2> : silent call SwitchFullSimpleMode()<CR>
 noremap! <F2> <Esc>:call SwitchFullSimpleMode()<CR>
 function SwitchFullSimpleMode()
 	if (&mouse == "a")
-    NERDTreeTabsClose
+        NERDTreeClose
 		let &mouse = ""
 		set nocindent
 		set nonumber norelativenumber
 		set wrap
-    set paste
-		echo "Switch to simple mode.(nomouse, nonumber, nocindent, wrap, paste, NERDTreeTabsClose)"
+        set paste
+		echo "Switch to simple mode.(nomouse, nonumber, nocindent, wrap, paste, NERDTreeClose)"
 	else
-    "NERDTreeTabsOpen
+        "NERDTreeOpen
 		let &mouse = "a"
 		set cindent
 		set number relativenumber
 		set wrap
-    set nopaste
+        set nopaste
 		echo "Switch to full mode.(mouse, number, cindent, wrap, nopaste)"
 	endif
 endfunction
@@ -209,30 +208,6 @@ function CloseTab()
     tabclose
 	endif
 endfunction
-
-autocmd BufEnter * call CheckLeftBuffers()
-function! CheckLeftBuffers()
-  let i = 1
-  while i <= winnr('$')
-    if getbufvar(winbufnr(i), '&buftype') == 'help' ||
-        \ getbufvar(winbufnr(i), '&buftype') == 'quickfix' ||
-        \ exists('t:NERDTreeBufName') &&
-        \   bufname(winbufnr(i)) == t:NERDTreeBufName ||
-        \ bufname(winbufnr(i)) == '__Tag_List__'
-      let i += 1
-    else
-      break
-    endif
-  endwhile
-  if i == winnr('$') + 1
-    if tabpagenr('$') == 1
-      qall
-    else
-      tabclose
-    endif
-  endif
-  unlet i
-endfunction
 """"""""""""""""""""""""""""""""""""""""""
 "set for foldmethod                      "
 """"""""""""""""""""""""""""""""""""""""""
@@ -264,38 +239,36 @@ nnoremap <F3> :call NumberToggle()<cr>
 let g:NERDSpaceDelims = 1
 " Use compact syntax for prettified multi-line comments
 let g:NERDCompactSexyComs = 1
-" Align line-wise comment delimiters flush left instead of following code
-" indentation
+" Align line-wise comment delimiters flush left instead of following code indentation
 let g:NERDDefaultAlign = 'left'
 " Set a language to use its alternate delimiters by default
 let g:NERDAltDelims_java = 1
 " Add your own custom formats or override the defaults
 let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
-" Allow commenting and inverting empty lines (useful when commenting a
-" region)
+" Allow commenting and inverting empty lines (useful when commenting a region)
 let g:NERDCommentEmptyLines = 1
 " Enable trimming of trailing whitespace when uncommenting
  let g:NERDTrimTrailingWhitespace = 1
 " Enable NERDCommenterToggle to check all selected lines is commented or not 
 let g:NERDToggleCheckAllLines = 1
-map <C-_> <leader>c<space>
 """"""""""""""""""""""""""""""""""""""""""
 " Nerdtree                               "
 """"""""""""""""""""""""""""""""""""""""""
-autocmd vimenter * silent NERDTree Home| wincmd p 
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * silent NERDTree Home | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+" Close the tab if NERDTree is the only window remaining in it.
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | call feedkeys(":quit\<CR>:\<BS>") | endif
+" Open the existing NERDTree on each new tab.
+autocmd BufWinEnter * if &buftype != 'quickfix' && getcmdwintype() == '' | silent NERDTreeMirror | endif
 autocmd FileType nerdtree setlocal nocursorcolumn nocursorline
-noremap <C-t> : silent call ToggleNerdTree()<CR>
+noremap <C-t> :call ToggleNerdTree()<CR>
 function ToggleNerdTree()
-  NERDTreeTabsToggle
+  NERDTreeToggle
   wincmd W
-  NERDTreeTabsFind
-  echo "Toggle Nerd Tree.(NERDTreeTabsToggle, NERDTreeTabsFind)"
 endfunction
-nnoremap <silent> <C-d> :NERDTreeTabsFind <CR>
+nnoremap <C-d> :NERDTreeFind<CR>
 let NERDTreeShowBookmarks=1
 let g:NERDTreeWinSize=20
-let g:nerdtree_tabs_open_on_console_startup=1
-let g:nerdtree_tabs_autofind=1
 """"""""""""""""""""""""""""""""""""""""""
 " Nerdtree Directory Highlighting        "
 """"""""""""""""""""""""""""""""""""""""""
