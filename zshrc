@@ -84,20 +84,14 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 ####################################################################
-#  Add cuda tools to command path                                  #
+#  Add tools to command path                                       #
 ####################################################################
 export GUROBI_HOME="/opt/gurobi1203/linux64"
 export Z3_HOME="${HOME}/.local/lib/python3.12/site-packages/z3"
 
-export PATH="/usr/local/cuda/bin${PATH:+:${PATH}}"
 export PATH="${HOME}/.local/bin/${PATH:+:${PATH}}"
 export PATH="${GUROBI_HOME}/bin${PATH:+:${PATH}}"
-export LD_LIBRARY_PATH="/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
-export LD_LIBRARY_PATH="/usr/local/cuda/extras/CUPTI/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
 export LD_LIBRARY_PATH="${GUROBI_HOME}/lib${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
-export LD_LIBRARY_PATH="${HOME}/.local/lib/python3.10/site-packages/tensorrt${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
-export LD_LIBRARY_PATH="/snap/gnome-3-38-2004/143/usr/lib/x86_64-linux-gnu${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
-export CUDA_HOME=/usr/local/cuda
 
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_PROMPT_SEPARATE_LINE=true
