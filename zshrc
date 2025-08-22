@@ -87,7 +87,6 @@ source $ZSH/oh-my-zsh.sh
 #  Add tools to command path                                       #
 ####################################################################
 export GUROBI_HOME="/opt/gurobi1203/linux64"
-export Z3_HOME="${HOME}/.local/lib/python3.12/site-packages/z3"
 
 export PATH="${HOME}/.local/bin/${PATH:+:${PATH}}"
 export PATH="${GUROBI_HOME}/bin${PATH:+:${PATH}}"
